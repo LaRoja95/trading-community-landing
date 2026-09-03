@@ -7,398 +7,194 @@
   <meta name="description" content="النجاح يُصنع في المحيط الصحيح. مجتمع إيجابي لتعلم التداول: لايفات يومية، مسار بمستويات، ودخول بـ 25 دولار — بدون توصيات." />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
-  <meta name="theme-color" content="#070b12" />
+  <meta name="theme-color" content="#0a1628" />
   <link rel="icon" href="assets/logo-trading.png" type="image/png" />
   <meta property="og:title" content="تعلم التداول بطريقة صحيحة" />
   <meta property="og:description" content="النجاح يُصنع في المحيط الصحيح. من يبقى خارجه يخسر المعلومة والمحيط الذي يوصل إلى النجاح." />
   <meta property="og:image" content="assets/logo-trading.png" />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #070b12;
-      --bg-2: #0c1320;
-      --panel: rgba(12, 19, 32, 0.78);
-      --gold: #c6a15b;
-      --gold-2: #e4c98a;
-      --gold-dim: rgba(198, 161, 91, 0.28);
-      --ivory: #f4eee3;
-      --muted: #9a927f;
-      --line: rgba(198, 161, 91, 0.22);
-      --ink: #070b12;
+      --navy: #0a1628;
+      --navy-2: #12203a;
+      --gold: #c9a227;
+      --gold-2: #e8c547;
+      --cream: #f4efe4;
+      --muted: #9aa6b8;
+      --card: rgba(18, 32, 58, 0.92);
+      --line: rgba(201, 162, 39, 0.35);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: "IBM Plex Sans Arabic", sans-serif;
-      background: var(--bg);
-      color: var(--ivory);
-      line-height: 1.85;
-      font-weight: 400;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 80;
-      opacity: 0.028;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      font-family: "Tajawal", sans-serif;
+      background: var(--navy);
+      color: #fff;
+      line-height: 1.8;
     }
     a { color: inherit; text-decoration: none; }
-    .wrap { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
-    .serif { font-family: "Amiri", serif; }
-    .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--gold-2);
-      letter-spacing: 0.18em;
-      font-size: 0.72rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .kicker::before, .kicker::after {
-      content: "";
-      width: 28px;
-      height: 1px;
-      background: var(--gold);
-      opacity: 0.7;
-    }
-    h1, h2, h3 { font-family: "Amiri", serif; font-weight: 700; }
-    h1 {
-      font-size: clamp(2.1rem, 4.6vw, 3.55rem);
-      line-height: 1.35;
-      margin-bottom: 18px;
-      font-weight: 700;
-    }
-    h1 em { font-style: italic; color: var(--gold-2); font-weight: 400; }
-    h2 {
-      font-size: clamp(1.7rem, 3vw, 2.35rem);
-      line-height: 1.4;
-      margin-bottom: 10px;
-    }
-    .sub {
-      color: var(--muted);
-      max-width: 38rem;
-      margin-bottom: 36px;
-      font-weight: 300;
-      font-size: 1.05rem;
-    }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin-inline: auto; }
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      background: linear-gradient(180deg, #e8d39a, var(--gold));
-      color: var(--ink);
-      font-weight: 600;
+      background: linear-gradient(180deg, var(--gold-2), var(--gold));
+      color: var(--navy);
+      font-weight: 800;
       border: 0;
-      border-radius: 2px;
-      padding: 13px 26px;
+      border-radius: 999px;
+      padding: 14px 28px;
       cursor: pointer;
-      font-size: 0.98rem;
-      letter-spacing: 0.02em;
-      transition: transform .2s ease, box-shadow .2s ease;
+      font-size: 1.05rem;
       font-family: inherit;
     }
-    .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(198,161,91,.22); }
     .btn-ghost {
       background: transparent;
       color: var(--gold-2);
       border: 1px solid var(--line);
     }
-    .btn-ghost:hover { box-shadow: none; background: rgba(198,161,91,.06); }
     header {
       position: sticky;
       top: 0;
-      z-index: 30;
-      background: rgba(7, 11, 18, 0.78);
-      backdrop-filter: blur(16px);
+      z-index: 20;
+      background: rgba(10, 22, 40, 0.88);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 0;
-      gap: 16px;
+      padding: 12px 0;
+      gap: 12px;
     }
-    .brand { display: flex; align-items: center; gap: 12px; color: var(--gold-2); }
-    .brand img {
-      width: 46px; height: 46px; border-radius: 50%;
-      box-shadow: 0 0 0 1px var(--gold-dim);
-    }
-    .brand-name {
-      font-family: "Amiri", serif;
-      font-size: 1.12rem;
-      line-height: 1.3;
-    }
-    .nav-links { display: flex; gap: 26px; color: var(--muted); font-size: 0.9rem; font-weight: 500; }
-    .nav-links a:hover { color: var(--gold-2); }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; color: var(--gold-2); }
+    .brand img { width: 52px; height: 52px; border-radius: 50%; }
+    .nav-links { display: flex; gap: 18px; color: var(--muted); font-weight: 700; font-size: 0.95rem; }
     .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 96px 0 80px;
-      background: linear-gradient(180deg, #0a111c 0%, var(--bg) 100%);
+      padding: 64px 0 48px;
+      background:
+        radial-gradient(900px 420px at 80% -10%, rgba(201,162,39,0.18), transparent 60%),
+        linear-gradient(180deg, #0c1c34, var(--navy));
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 64px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
       align-items: center;
     }
-    .lead {
-      color: #d8d0c0;
-      font-size: 1.12rem;
-      font-weight: 300;
-      max-width: 40rem;
-      margin-bottom: 18px;
+    .badge {
+      display: inline-block;
+      border: 1px solid var(--line);
+      color: var(--gold-2);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-weight: 700;
+      margin-bottom: 16px;
     }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.7rem); line-height: 1.35; margin-bottom: 14px; }
+    h1 span { color: var(--gold-2); }
+    .lead { color: var(--cream); font-size: 1.12rem; max-width: 40rem; margin-bottom: 16px; }
     .truth {
       max-width: 40rem;
-      margin-bottom: 28px;
-      padding: 14px 16px 14px 0;
-      border-right: 2px solid var(--gold);
-      color: var(--ivory);
-      font-size: 1.05rem;
-      font-weight: 400;
+      margin-bottom: 24px;
+      padding: 12px 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(201,162,39,0.08);
+      color: var(--cream);
     }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
     .hero-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 22px;
-      margin-top: 36px;
-      padding-top: 28px;
-      border-top: 1px solid var(--line);
+      gap: 18px;
+      margin-top: 28px;
       color: var(--muted);
-      font-size: 0.88rem;
+      font-size: 0.92rem;
     }
-    .hero-meta strong {
-      display: block;
-      color: var(--gold-2);
-      font-family: "Amiri", serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-    }
-    .plaque {
-      position: relative;
-      background: rgba(12, 19, 32, 0.72);
+    .hero-meta strong { display: block; color: var(--gold-2); font-size: 1.05rem; }
+    .price-card {
+      background: var(--card);
       border: 1px solid var(--line);
-      padding: 34px 30px 28px;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
     }
-    .plaque .tag {
-      color: var(--gold-2);
-      letter-spacing: .22em;
-      font-size: .72rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .price {
-      font-family: "Amiri", serif;
-      font-size: 3.4rem;
-      color: var(--gold-2);
-      line-height: 1;
-      margin: 6px 0 8px;
-    }
-    .price small { font-size: 1.05rem; color: var(--muted); font-weight: 400; }
-    .plaque p { color: var(--muted); font-size: .95rem; }
-    .plaque ul { list-style: none; margin: 22px 0 26px; }
-    .plaque li {
-      padding: 9px 0;
-      border-bottom: 1px solid rgba(198,161,91,.1);
-      color: var(--ivory);
-      font-size: .98rem;
-    }
-    .plaque li:last-child { border-bottom: 0; }
-    .plaque li::before { content: "—  "; color: var(--gold); }
-    .pillars {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: var(--bg-2);
-    }
-    .pillar {
-      padding: 28px 22px;
-      border-left: 1px solid var(--line);
-    }
-    .pillar:last-child { border-left: 0; }
-    .pillar span {
-      display: block;
-      color: var(--gold);
-      font-size: .75rem;
-      letter-spacing: .16em;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-    section { padding: 88px 0; }
-    .section-dark { background: var(--bg-2); }
-    .grid-3, .grid-2 { display: grid; gap: 18px; }
+    .price-card .tag { color: var(--gold-2); font-weight: 800; }
+    .price { font-size: 3rem; font-weight: 900; color: var(--gold-2); line-height: 1; margin: 8px 0; }
+    .price small { font-size: 1.05rem; color: var(--muted); font-weight: 700; }
+    .price-card > p { color: var(--muted); }
+    .price-card ul { list-style: none; margin: 16px 0 22px; color: var(--cream); }
+    .price-card li { padding: 7px 0; }
+    .price-card li::before { content: "✓ "; color: var(--gold-2); font-weight: 900; }
+    section { padding: 64px 0; }
+    h2 { font-size: 1.9rem; margin-bottom: 8px; }
+    .sub { color: var(--muted); margin-bottom: 28px; max-width: 40rem; }
+    .grid-3, .grid-2 { display: grid; gap: 16px; }
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
     .grid-2 { grid-template-columns: 1fr 1fr; }
     .card {
-      background: var(--panel);
+      background: var(--card);
       border: 1px solid var(--line);
-      padding: 28px 24px 26px;
-      backdrop-filter: blur(8px);
-      transition: border-color .2s ease, transform .2s ease;
+      border-radius: 20px;
+      padding: 22px;
     }
-    .card:hover { border-color: rgba(198,161,91,.45); transform: translateY(-2px); }
-    .idx {
-      display: block;
-      color: var(--gold);
-      font-family: "Amiri", serif;
-      font-size: 1.15rem;
-      margin-bottom: 10px;
-    }
-    .card h3 { color: var(--ivory); font-size: 1.28rem; margin-bottom: 10px; }
-    .card p { color: var(--muted); font-weight: 300; }
-    #await {
-      position: relative;
-      background:
-        radial-gradient(720px 280px at 80% 0%, rgba(198,161,91,.12), transparent 60%),
-        var(--bg);
-    }
-    .gains-intro {
-      margin-bottom: 36px;
-    }
-    .gains-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .gain {
-      position: relative;
-      padding: 32px 26px 28px;
-      background: linear-gradient(180deg, rgba(20,28,42,.95), rgba(8,12,20,.92));
-      border: 1px solid var(--line);
-      overflow: hidden;
-      min-height: 240px;
-      transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
-    }
-    .gain::before {
-      content: "";
-      position: absolute;
-      top: 0; right: 0; left: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--gold-2), transparent 80%);
-    }
-    .gain:hover {
-      border-color: rgba(198,161,91,.55);
-      transform: translateY(-4px);
-      box-shadow: 0 24px 50px rgba(0,0,0,.35);
-    }
-    .gain .idx {
-      font-size: 2.1rem;
-      color: var(--gold-2);
-      margin-bottom: 6px;
-      line-height: 1;
-    }
-    .gain h3 {
-      color: var(--ivory);
-      font-size: 1.42rem;
-      line-height: 1.45;
-      margin-bottom: 12px;
-    }
-    .gain p { color: #cfc6b4; font-weight: 300; font-size: 1.02rem; }
-    .gain.spotlight {
-      background: rgba(12, 19, 32, 0.85);
-      border-color: rgba(198,161,91,.35);
-    }
-    .gains-cta {
-      margin-top: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 22px 26px;
-      border: 1px solid var(--gold-dim);
-      background: rgba(198,161,91,.06);
-    }
-    .gains-cta p {
-      color: var(--ivory);
-      font-family: "Amiri", serif;
-      font-size: 1.28rem;
-      line-height: 1.55;
-    }
-    .gains-cta span { display: block; color: var(--muted); font-family: "IBM Plex Sans Arabic", sans-serif; font-size: .92rem; font-weight: 300; margin-top: 4px; }
-    .levels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
-    .level {
-      padding: 36px 28px;
-      border: 1px solid var(--line);
-      background: rgba(7,11,18,.5);
-      position: relative;
-    }
-    .level + .level { border-right: 0; }
-    .level.featured {
-      background: linear-gradient(180deg, rgba(198,161,91,.12), rgba(7,11,18,.4));
-      border-color: rgba(198,161,91,.45);
-    }
-    .level .n {
-      font-family: "Amiri", serif;
-      color: var(--gold-2);
-      font-size: 2rem;
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-    .level h3 { margin-bottom: 8px; }
-    .level > p { color: var(--muted); font-weight: 300; font-size: .98rem; }
-    .level ul {
-      list-style: none;
-      margin-top: 16px;
-      color: #d8d0c0;
-      font-weight: 300;
-      font-size: .95rem;
-    }
-    .level li { padding: 6px 0; }
-    .level li::before { content: "—  "; color: var(--gold); }
-    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .yes, .no { padding: 32px 28px; border: 1px solid var(--line); }
-    .yes { background: rgba(198,161,91,.07); }
-    .no { background: rgba(255,255,255,.02); }
-    .yes h3 { color: var(--gold-2); }
-    .no h3 { color: #c4b8a4; }
-    .yes ul, .no ul { list-style: none; margin-top: 14px; color: var(--muted); }
-    .yes li, .no li { padding: 7px 0; }
-    .yes li::before { content: "▸ "; color: var(--gold); }
-    .no li::before { content: "✕ "; color: #6b6356; }
-    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
-    .step {
-      text-align: right;
-      padding: 28px 22px;
-      border: 1px solid var(--line);
-    }
-    .step + .step { border-right: 0; }
+    .card h3 { color: var(--gold-2); margin-bottom: 8px; font-size: 1.15rem; }
+    .idx { display: block; color: var(--gold-2); font-weight: 800; margin-bottom: 6px; }
+    .section-dark { background: #0c1c34; }
+    .level ul, .yes ul, .no ul { list-style: none; margin-top: 12px; color: var(--cream); }
+    .level li, .yes li, .no li { padding: 5px 0; }
+    .yes li::before { content: "✓ "; color: var(--gold-2); font-weight: 900; }
+    .no li::before { content: "✕ "; color: var(--muted); }
+    .level li::before { content: "✓ "; color: var(--gold-2); font-weight: 900; }
+    .level p { color: var(--muted); }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .step { text-align: center; padding: 20px 14px; }
     .num {
-      font-family: "Amiri", serif;
-      color: var(--gold-2);
-      font-size: 1.7rem;
-      margin-bottom: 8px;
+      width: 42px; height: 42px; border-radius: 50%;
+      margin: 0 auto 10px;
+      display: grid; place-items: center;
+      background: var(--gold); color: var(--navy); font-weight: 900;
     }
-    .step strong { display: block; margin-bottom: 6px; }
-    .step p { color: var(--muted); font-size: .95rem; font-weight: 300; }
-    .pay { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; align-items: start; }
+    .pay { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 20px; align-items: start; }
     .pay-btn {
       width: 100%;
-      margin-top: 10px;
-      background: transparent;
-      color: var(--ivory);
+      margin-top: 8px;
+      background: #163052;
+      color: #fff;
       border: 1px solid var(--line);
     }
     .note {
-      border: 1px solid var(--line);
+      background: rgba(201,162,39,0.08);
+      border: 1px dashed var(--line);
+      border-radius: 16px;
       padding: 14px 16px;
-      color: #d8d0c0;
-      margin-top: 16px;
-      font-size: 0.92rem;
-      font-weight: 300;
+      color: var(--cream);
+      margin-top: 14px;
+      font-size: 0.95rem;
     }
+    .gains-cta {
+      margin-top: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px 22px;
+    }
+    .gains-cta p { color: var(--cream); }
+    .gains-cta span { display: block; color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
     footer {
       border-top: 1px solid var(--line);
-      padding: 40px 0 48px;
+      padding: 28px 0 40px;
       color: var(--muted);
-      font-size: 0.88rem;
+      font-size: 0.92rem;
       text-align: center;
     }
     .foot-brand {
@@ -406,23 +202,21 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
       color: var(--gold-2);
+      font-weight: 800;
     }
     .foot-brand img { width: 36px; height: 36px; border-radius: 50%; }
-    @media (max-width: 900px) {
-      .hero-grid, .grid-3, .grid-2, .pillars, .levels, .steps, .pay, .split, .nav-links, .gains-grid, .gains-intro, .gains-cta {
+    @media (max-width: 860px) {
+      .hero-grid, .grid-3, .grid-2, .steps, .pay, .split, .nav-links, .gains-cta {
         grid-template-columns: 1fr;
         display: grid;
       }
-      .gains-cta { text-align: center; }
-      .gains-cta .btn { width: 100%; }
       .nav-links { display: none; }
-      .pillar, .level + .level, .step + .step { border-left: 0; border-right: 0; border-top: 0; }
-      .hero { padding: 48px 0 40px; }
-      section { padding: 56px 0; }
-      .hero-meta { gap: 16px; }
+      .hero { padding-top: 36px; }
+      .gains-cta .btn { width: 100%; }
     }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   </style>
 </head>
 <body>
@@ -430,7 +224,7 @@
     <div class="wrap nav">
       <a class="brand" href="#top">
         <img src="assets/logo-trading.png" alt="تعلم التداول بطريقة صحيحة" />
-        <span class="brand-name">تعلم التداول بطريقة صحيحة</span>
+        تعلم التداول بطريقة صحيحة
       </a>
       <nav class="nav-links">
         <a href="#await">ما ينتظرك</a>
@@ -446,8 +240,8 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="kicker">بيئة إيجابية · مسار للنجاح</div>
-          <h1>النجاح يُصنع في المحيط الصحيح.<br /><em>لا في ضجيج الإشارات.</em></h1>
+          <span class="badge">بيئة إيجابية · مسار للنجاح · بدون توصيات</span>
+          <h1>النجاح يُصنع في <span>المحيط الصحيح</span>. لا في ضجيج الإشارات.</h1>
           <p class="lead">
             الاستراتيجية وحدها لا تكفي. المحيط الإيجابي هو الذي يحمي انضباطك ويصحّح خطأك.
             من يبقى خارجه يبقى وحده: معلومة بلا تطبيق، وخطأ بلا تصحيح، ومسار بلا رفقة جادّة.
@@ -466,7 +260,7 @@
             <div><strong>مسار واضح</strong>حتى حساب التمويل</div>
           </div>
         </div>
-        <aside class="plaque">
+        <aside class="price-card">
           <div class="tag">دخول المجتمع</div>
           <div class="price">25$ <small>/ الشهر</small></div>
           <p>دخول إلى بيئة إيجابية بمعيار — ليست دورة تُشاهد ولا إشارات جاهزة. أو ما يعادله عبر CCP / Baridimob.</p>
@@ -483,40 +277,35 @@
 
     <section id="await">
       <div class="wrap">
-        <div class="gains-intro">
-          <div>
-            <div class="kicker">ماذا يحصل عليه من هو داخل المحيط</div>
-            <h2>ستّ امتيازات…<br />من يبقى خارجها يخسرها.</h2>
-            <p class="sub">هذا ليس محتوى يُستهلك ويُنسى. هذا حضور يومي، مساءلة، ومسار من الأساس إلى حساب التمويل. من يبقى خارجه يخسر المعلومة وهي تُصنع أمامه، ويخسر المحيط الذي يوصله إلى النجاح.</p>
-          </div>
-        </div>
-        <div class="gains-grid">
-          <article class="gain spotlight">
+        <h2>ستّ امتيازات… من يبقى خارجها يخسرها</h2>
+        <p class="sub">هذا ليس محتوى يُستهلك ويُنسى. هذا حضور يومي، مساءلة، ومسار من الأساس إلى حساب التمويل. من يبقى خارجه يخسر المعلومة وهي تُصنع أمامه، ويخسر المحيط الذي يوصله إلى النجاح.</p>
+        <div class="grid-3">
+          <article class="card">
             <span class="idx">01</span>
             <h3>لايف يومي على الجلسة الحيّة</h3>
             <p>لندن أو نيويورك. تشهد التحليل وهو يُصنع أمامك: من القراءة إلى قرار الدخول. تتعلّم الطريقة… ولا تُملى عليك الصفقة.</p>
           </article>
-          <article class="gain">
+          <article class="card">
             <span class="idx">02</span>
             <h3>مساحة للسؤال بلا حرج</h3>
             <p>لايفات مخصّصة لعقدتك الحقيقية: تحليل، ستوب، إدارة، أو شركة تمويل. السؤال هنا جزء من التعلّم، لا ضعف يُخفى.</p>
           </article>
-          <article class="gain spotlight">
+          <article class="card">
             <span class="idx">03</span>
             <h3>لقاء خاص بك كل شهر</h3>
             <p>ميتنغ فردي لمراجعة تقدمك ونقاط ضعفك. لست رقماً في شات. مرة في الشهر تُحاسب على تطورك وتُصحَّح مسارك.</p>
           </article>
-          <article class="gain">
+          <article class="card">
             <span class="idx">04</span>
             <h3>بيئة ترفعك لا تستنزفك</h3>
             <p>أعضاء يُختارون بعناية. تستفيد من الخطأ الحقيقي ومن الخبرة الهادئة. السلبية والتبرير لا مكان لهما هنا.</p>
           </article>
-          <article class="gain">
+          <article class="card">
             <span class="idx">05</span>
             <h3>مسار بثلاث درجات واضح</h3>
             <p>من البداية الصحيحة، إلى التداول بلا أخطاء المبتدئ، إلى حساب التمويل. كل شهر تعرف أين أنت… وإلى أين تصعد.</p>
           </article>
-          <article class="gain spotlight">
+          <article class="card">
             <span class="idx">06</span>
             <h3>من استراتيجيتك إلى شركة التمويل</h3>
             <p>تختار ما يناسبك بمعايير، تبني إدارة رأس المال، ثم تعمل مع التمويل بحساب منضبط. الانضباط المثبت يفتح العضوية مدى الحياة.</p>
@@ -533,14 +322,12 @@
 
     <section id="levels" class="section-dark">
       <div class="wrap">
-        <div class="kicker">المنهج</div>
-        <h2>ثلاث مستويات… من البداية الصحيحة إلى حساب التمويل.</h2>
+        <h2>ثلاث مستويات… من البداية الصحيحة إلى حساب التمويل</h2>
         <p class="sub">كل مستوى له معيار واضح. الصعود بالتطبيق على الحساب، لا بالكلام ولا بطول البقاء في الشات.</p>
-        <div class="levels">
-          <article class="level">
-            <div class="n">01</div>
-            <h3>البداية الصحيحة</h3>
-            <p>هنا تُوضع الأسس قبل أي تسريع. اللايف الأول يشرح معايير اختيار الاستراتيجية المناسبة لك — لا استراتيجية تُنسخ على الجميع.</p>
+        <div class="grid-3">
+          <article class="card level">
+            <h3>المستوى 1 — البداية الصحيحة</h3>
+            <p>هنا تُوضع الأسس قبل أي تسريع. اللايف الأول يشرح معايير اختيار الاستراتيجية المناسبة لك.</p>
             <ul>
               <li>اختيار الاستراتيجية المناسبة بمعايير واضحة</li>
               <li>الدخول الصحيح على الصفقة</li>
@@ -549,27 +336,25 @@
               <li>أول منظومة تُطبَّق، لا تُحفظ فقط</li>
             </ul>
           </article>
-          <article class="level">
-            <div class="n">02</div>
-            <h3>بدون أخطاء المبتدئ</h3>
-            <p>العضو هنا لم يعد يتعثّر في الأساسيات. التحليل صحيح، والدخول والستوب جزء من عادته، والإدارة المالية حاضرة في كل صفقة.</p>
+          <article class="card level">
+            <h3>المستوى 2 — بدون أخطاء المبتدئ</h3>
+            <p>العضو هنا لم يعد يتعثّر في الأساسيات. التحليل صحيح، والدخول والستوب جزء من عادته.</p>
             <ul>
               <li>تحليل صحيح ومتّسق</li>
               <li>دخول وستوب بدون أخطاء المبتدئين</li>
               <li>إتقان النماذج الفنية في التطبيق الحي</li>
               <li>العمل بإدارة مالية ثابتة</li>
-              <li>مراجعة أسبوعية: أين أنت وما الذي ينقصك</li>
+              <li>مراجعة أسبوعية لتقدمك</li>
             </ul>
           </article>
-          <article class="level featured">
-            <div class="n">03</div>
-            <h3>حساب التمويل والانضباط</h3>
-            <p>المسار يتجه إلى العمل مع شركة تمويل: جمع البيانات الصحيحة، وبناء إدارة مالية خاصة أكثر احترافية. بعد إثبات الانضباط على الحسابات → <strong style="color:var(--gold-2)">عضوية مجانية مدى الحياة</strong>.</p>
+          <article class="card level">
+            <h3>المستوى 3 — حساب التمويل والانضباط</h3>
+            <p>بعد إثبات الانضباط على الحسابات → <strong style="color:var(--gold-2)">عضوية مجانية مدى الحياة</strong>.</p>
             <ul>
               <li>حساب تمويل مع شركة تمويل</li>
               <li>جمع البيانات الصحيحة من صفقاتك</li>
               <li>بناء إدارة مالية خاصة أكثر احترافية</li>
-              <li>انضباط ظاهر على الحساب… لا كلام في الشات</li>
+              <li>انضباط ظاهر على الحساب</li>
               <li>بلوغ المعيار يفتح العضوية الدائمة</li>
             </ul>
           </article>
@@ -579,20 +364,19 @@
 
     <section id="who">
       <div class="wrap">
-        <div class="kicker">معيار الدخول</div>
-        <h2>المجتمع ليس للجميع.<br />وهذا مقصود.</h2>
-        <p class="sub">من يبقى خارج هذه البيئة يخسر محيطاً يصحّح مساره ويُخرِج غير الجاد. المال ليس الموضوع… الموضوع أن تكون داخل المسار أو خارجه.</p>
+        <h2>المجتمع ليس للجميع. وهذا مقصود.</h2>
+        <p class="sub">من يبقى خارج هذه البيئة يخسر محيطاً يصحّح مساره. المال ليس الموضوع… الموضوع أن تكون داخل المسار أو خارجه.</p>
         <div class="split">
-          <div class="yes">
+          <div class="card yes">
             <h3>هذا المكان لك إذا</h3>
             <ul>
               <li>تريد بناء منظومة، لا نسخ صفقات غيرك</li>
               <li>تقبل القواعد والمساءلة الشهرية</li>
               <li>تبحث عن بيئة هادئة وجادّة</li>
-              <li>تفهم أن إدارة رأس المال جزء من التعلّم لا هامش عليه</li>
+              <li>تفهم أن إدارة رأس المال جزء من التعلّم</li>
             </ul>
           </div>
-          <div class="no">
+          <div class="card no">
             <h3>لن يناسبك إذا</h3>
             <ul>
               <li>تريد توصيات جاهزة أو نسخ تداول</li>
@@ -605,34 +389,30 @@
       </div>
     </section>
 
-    <section class="section-dark">
+    <section>
       <div class="wrap">
-        <div class="kicker">مسار الدخول</div>
-        <h2>كيف تصبح عضواً؟</h2>
+        <h2>كيف تدخل؟</h2>
         <p class="sub">الدفع يدوي في هذه المرحلة. الرول يُجدَّد ثلاثين يوماً بعد كل تحويل. لا تجديد تلقائي من البنك.</p>
         <div class="steps">
-          <div class="step"><div class="num">01</div><strong>اختر طريقة الدفع</strong><p>Binance USDT، أو CCP / Baridimob داخل الجزائر</p></div>
-          <div class="step"><div class="num">02</div><strong>حوّل مقابل الدخول</strong><p>25 دولاراً — أو ما يعادلها بالدينار</p></div>
-          <div class="step"><div class="num">03</div><strong>أرسل إثبات الدفع</strong><p>الاسم الكامل + السكرين عبر واتساب</p></div>
-          <div class="step"><div class="num">04</div><strong>تستلم الدعوة</strong><p>ديسكورد + رول المشترك لثلاثين يوماً</p></div>
+          <div class="card step"><div class="num">1</div><strong>اختر طريقة الدفع</strong><p>Binance USDT أو CCP / Baridimob</p></div>
+          <div class="card step"><div class="num">2</div><strong>حوّل مقابل الدخول</strong><p>25 دولاراً أو ما يعادلها</p></div>
+          <div class="card step"><div class="num">3</div><strong>أرسل إثبات التحويل</strong><p>الاسم + السكرين عبر واتساب</p></div>
+          <div class="card step"><div class="num">4</div><strong>تستلم الدعوة</strong><p>ديسكورد + رول 30 يوماً</p></div>
         </div>
       </div>
     </section>
 
-    <section id="pay">
+    <section id="pay" class="section-dark">
       <div class="wrap pay">
         <div>
-          <div class="kicker">كيف تدخل</div>
           <h2>طرق الدخول</h2>
           <p class="sub">الدخول يتجدد كل ثلاثين يوماً بعد التحويل. إن توقف الدخول، يتوقف الحضور داخل المحيط حتى العودة.</p>
           <div class="grid-2">
             <article class="card">
-              <span class="idx">USDT</span>
-              <h3>Binance</h3>
+              <h3>USDT / Binance</h3>
               <p>25 دولاراً شهرياً. عنوان المحفظة يُرسل لك بعد تأكيد رغبتك في الدخول — لا يُعرض هنا.</p>
             </article>
             <article class="card">
-              <span class="idx">DZD</span>
               <h3>CCP / Baridimob</h3>
               <p>للمقيمين في الجزائر. رقم الحساب والمبلغ بالدينار يُرسلان بعد رسالة واتساب.</p>
             </article>
@@ -641,11 +421,10 @@
             العرض السنوي اختياري: ادفع سنة واحصل على شهرين إضافيين. أنت تتحكم في كل تجديد — لا خصم تلقائي.
           </p>
         </div>
-        <aside class="plaque">
-          <div class="tag">طلب الدخول</div>
-          <h3 class="serif" style="font-size:1.55rem;margin:8px 0 10px">أرسل إثبات التحويل</h3>
+        <aside class="price-card">
+          <h3 style="color:var(--gold-2);margin-bottom:8px">طلب الدخول</h3>
           <p>بعد التحويل: الاسم الكامل + صورة الإثبات + طريقة الدفع. نراجع الطلب ثم نفتح لك باب المحيط.</p>
-          <a class="btn" id="waBtn" href="#" target="_blank" rel="noopener" style="width:100%;margin-top:20px">واتساب الدخول</a>
+          <a class="btn" id="waBtn" href="#" target="_blank" rel="noopener" style="width:100%;margin-top:16px">واتساب الدخول</a>
           <button class="btn pay-btn" id="copyNote" type="button">نسخ رسالة الدخول</button>
           <p class="note" id="waHint">يفتح واتساب برسالة جاهزة لطلب الدخول إلى المجتمع.</p>
         </aside>
@@ -657,7 +436,7 @@
     <div class="wrap">
       <div class="foot-brand">
         <img src="assets/logo-trading.png" alt="" />
-        <span class="serif">تعلم التداول بطريقة صحيحة</span>
+        تعلم التداول بطريقة صحيحة
       </div>
       محتوى تعليمي فقط. لسنا مستشارين ماليين ولا نقدّم توصيات صفقات.
       القرار ومسؤولية رأس المال عليك. التوفيق من الله ثم الاجتهاد والانضباط.
