@@ -3,161 +3,349 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>تعلم التداول بطريقة صحيحة | مجتمع الاشتراك الشهري</title>
-  <meta name="description" content="مجتمع إيجابي لتعلم التداول بطريقة صحيحة. لايفات يومية، إدارة رأس المال، ومنظومة من الألف إلى الياء. اشتراك شهري 25 دولار عبر Binance — بدون توصيات." />
-  <meta name="theme-color" content="#0a1628" />
+  <title>تعلم التداول بطريقة صحيحة | عضوية المجتمع</title>
+  <meta name="description" content="مجتمع خاص لتعلم التداول بطريقة صحيحة. لايفات يومية، منظومة بمستويات، ومساءلة شهرية. اشتراك 25 دولار عبر Binance — بدون توصيات." />
+  <meta name="theme-color" content="#070b12" />
   <link rel="icon" href="assets/logo-trading.png" type="image/png" />
   <meta property="og:title" content="تعلم التداول بطريقة صحيحة" />
-  <meta property="og:description" content="مجتمع اشتراك شهري 25$ عبر Binance. تعليم ومنظومة — بدون توصيات." />
+  <meta property="og:description" content="عضوية شهرية في مجتمع بمعيار. تعليم ومنظومة — بدون توصيات." />
   <meta property="og:image" content="assets/logo-trading.png" />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --navy: #0a1628;
-      --navy-2: #12203a;
-      --gold: #c9a227;
-      --gold-2: #e8c547;
-      --cream: #f4efe4;
-      --muted: #9aa6b8;
-      --card: rgba(18, 32, 58, 0.92);
-      --line: rgba(201, 162, 39, 0.35);
+      --bg: #070b12;
+      --bg-2: #0c1320;
+      --panel: rgba(12, 19, 32, 0.78);
+      --gold: #c6a15b;
+      --gold-2: #e4c98a;
+      --gold-dim: rgba(198, 161, 91, 0.28);
+      --ivory: #f4eee3;
+      --muted: #9a927f;
+      --line: rgba(198, 161, 91, 0.22);
+      --ink: #070b12;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: "Tajawal", sans-serif;
-      background: var(--navy);
-      color: #fff;
-      line-height: 1.8;
+      font-family: "IBM Plex Sans Arabic", sans-serif;
+      background: var(--bg);
+      color: var(--ivory);
+      line-height: 1.85;
+      font-weight: 400;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 80;
+      opacity: 0.045;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
     a { color: inherit; text-decoration: none; }
-    .wrap { width: min(1120px, calc(100% - 32px)); margin-inline: auto; }
+    .wrap { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+    .serif { font-family: "Amiri", serif; }
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold-2);
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .kicker::before, .kicker::after {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.7;
+    }
+    h1, h2, h3 { font-family: "Amiri", serif; font-weight: 700; }
+    h1 {
+      font-size: clamp(2.1rem, 4.6vw, 3.55rem);
+      line-height: 1.35;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+    h1 em { font-style: italic; color: var(--gold-2); font-weight: 400; }
+    h2 {
+      font-size: clamp(1.7rem, 3vw, 2.35rem);
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+    .sub {
+      color: var(--muted);
+      max-width: 38rem;
+      margin-bottom: 36px;
+      font-weight: 300;
+      font-size: 1.05rem;
+    }
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      background: linear-gradient(180deg, var(--gold-2), var(--gold));
-      color: var(--navy);
-      font-weight: 800;
+      background: linear-gradient(180deg, #e8d39a, var(--gold));
+      color: var(--ink);
+      font-weight: 600;
       border: 0;
-      border-radius: 999px;
-      padding: 14px 28px;
+      border-radius: 2px;
+      padding: 13px 26px;
       cursor: pointer;
-      font-size: 1.05rem;
+      font-size: 0.98rem;
+      letter-spacing: 0.02em;
+      transition: transform .2s ease, box-shadow .2s ease;
+      font-family: inherit;
     }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(198,161,91,.22); }
     .btn-ghost {
       background: transparent;
       color: var(--gold-2);
       border: 1px solid var(--line);
     }
+    .btn-ghost:hover { box-shadow: none; background: rgba(198,161,91,.06); }
     header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(10, 22, 40, 0.88);
-      backdrop-filter: blur(12px);
+      z-index: 30;
+      background: rgba(7, 11, 18, 0.78);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--line);
     }
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 0;
-      gap: 12px;
+      padding: 14px 0;
+      gap: 16px;
     }
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; color: var(--gold-2); }
-    .brand img { width: 52px; height: 52px; border-radius: 50%; }
-    .nav-links { display: flex; gap: 18px; color: var(--muted); font-weight: 700; font-size: 0.95rem; }
+    .brand { display: flex; align-items: center; gap: 12px; color: var(--gold-2); }
+    .brand img {
+      width: 46px; height: 46px; border-radius: 50%;
+      box-shadow: 0 0 0 1px var(--gold-dim);
+    }
+    .brand-name {
+      font-family: "Amiri", serif;
+      font-size: 1.12rem;
+      line-height: 1.3;
+    }
+    .nav-links { display: flex; gap: 26px; color: var(--muted); font-size: 0.9rem; font-weight: 500; }
+    .nav-links a:hover { color: var(--gold-2); }
     .hero {
-      padding: 64px 0 48px;
+      position: relative;
+      overflow: hidden;
+      padding: 88px 0 72px;
       background:
-        radial-gradient(900px 420px at 80% -10%, rgba(201,162,39,0.18), transparent 60%),
-        linear-gradient(180deg, #0c1c34, var(--navy));
+        radial-gradient(900px 480px at 12% -10%, rgba(198,161,91,0.16), transparent 55%),
+        radial-gradient(700px 420px at 100% 20%, rgba(198,161,91,0.07), transparent 50%),
+        linear-gradient(180deg, #0b1220 0%, var(--bg) 100%);
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 36px;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 56px;
       align-items: center;
     }
-    .badge {
-      display: inline-block;
-      border: 1px solid var(--line);
+    .lead {
+      color: #d8d0c0;
+      font-size: 1.12rem;
+      font-weight: 300;
+      max-width: 40rem;
+      margin-bottom: 28px;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    .hero-meta strong {
+      display: block;
       color: var(--gold-2);
-      border-radius: 999px;
-      padding: 6px 14px;
+      font-family: "Amiri", serif;
+      font-size: 1.2rem;
       font-weight: 700;
-      margin-bottom: 16px;
     }
-    h1 { font-size: clamp(1.8rem, 4vw, 2.7rem); line-height: 1.35; margin-bottom: 14px; }
-    h1 span { color: var(--gold-2); }
-    .lead { color: var(--cream); font-size: 1.12rem; max-width: 40rem; margin-bottom: 24px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
-    .price-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    .plaque {
+      position: relative;
+      background: linear-gradient(180deg, rgba(18,26,40,.95), rgba(10,15,24,.96));
+      border: 1px solid var(--gold-dim);
+      padding: 36px 32px 30px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.45), inset 0 1px 0 rgba(228,201,138,.12);
     }
-    .price-card .tag { color: var(--gold-2); font-weight: 800; }
-    .price { font-size: 3rem; font-weight: 900; color: var(--gold-2); line-height: 1; margin: 8px 0; }
-    .price small { font-size: 1.05rem; color: var(--muted); font-weight: 700; }
-    .price-card ul { list-style: none; margin: 16px 0 22px; color: var(--cream); }
-    .price-card li { padding: 7px 0; }
-    .price-card li::before { content: "✓ "; color: var(--gold-2); font-weight: 900; }
-    section { padding: 64px 0; }
-    h2 { font-size: 1.9rem; margin-bottom: 8px; }
-    .sub { color: var(--muted); margin-bottom: 28px; }
-    .grid-3, .grid-2 { display: grid; gap: 16px; }
+    .plaque::before, .plaque::after {
+      content: "";
+      position: absolute;
+      width: 18px; height: 18px;
+      border: 1px solid var(--gold);
+      opacity: .7;
+    }
+    .plaque::before { top: 10px; right: 10px; border-left: 0; border-bottom: 0; }
+    .plaque::after { bottom: 10px; left: 10px; border-right: 0; border-top: 0; }
+    .plaque .tag {
+      color: var(--gold-2);
+      letter-spacing: .22em;
+      font-size: .72rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .price {
+      font-family: "Amiri", serif;
+      font-size: 3.4rem;
+      color: var(--gold-2);
+      line-height: 1;
+      margin: 6px 0 8px;
+    }
+    .price small { font-size: 1.05rem; color: var(--muted); font-weight: 400; }
+    .plaque p { color: var(--muted); font-size: .95rem; }
+    .plaque ul { list-style: none; margin: 22px 0 26px; }
+    .plaque li {
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(198,161,91,.1);
+      color: var(--ivory);
+      font-size: .98rem;
+    }
+    .plaque li:last-child { border-bottom: 0; }
+    .plaque li::before { content: "—  "; color: var(--gold); }
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--bg-2);
+    }
+    .pillar {
+      padding: 28px 22px;
+      border-left: 1px solid var(--line);
+    }
+    .pillar:last-child { border-left: 0; }
+    .pillar span {
+      display: block;
+      color: var(--gold);
+      font-size: .75rem;
+      letter-spacing: .16em;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    section { padding: 88px 0; }
+    .section-dark { background: var(--bg-2); }
+    .grid-3, .grid-2 { display: grid; gap: 18px; }
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
     .grid-2 { grid-template-columns: 1fr 1fr; }
     .card {
-      background: var(--card);
+      background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 22px;
+      padding: 28px 24px 26px;
+      backdrop-filter: blur(8px);
+      transition: border-color .2s ease, transform .2s ease;
     }
-    .card h3 { color: var(--gold-2); margin-bottom: 8px; font-size: 1.15rem; }
-    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-    .step { text-align: center; padding: 20px 14px; }
+    .card:hover { border-color: rgba(198,161,91,.45); transform: translateY(-2px); }
+    .idx {
+      display: block;
+      color: var(--gold);
+      font-family: "Amiri", serif;
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+    .card h3 { color: var(--ivory); font-size: 1.28rem; margin-bottom: 10px; }
+    .card p { color: var(--muted); font-weight: 300; }
+    .levels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+    .level {
+      padding: 36px 28px;
+      border: 1px solid var(--line);
+      background: rgba(7,11,18,.5);
+      position: relative;
+    }
+    .level + .level { border-right: 0; }
+    .level.featured {
+      background: linear-gradient(180deg, rgba(198,161,91,.12), rgba(7,11,18,.4));
+      border-color: rgba(198,161,91,.45);
+    }
+    .level .n {
+      font-family: "Amiri", serif;
+      color: var(--gold-2);
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .yes, .no { padding: 32px 28px; border: 1px solid var(--line); }
+    .yes { background: rgba(198,161,91,.07); }
+    .no { background: rgba(255,255,255,.02); }
+    .yes h3 { color: var(--gold-2); }
+    .no h3 { color: #c4b8a4; }
+    .yes ul, .no ul { list-style: none; margin-top: 14px; color: var(--muted); }
+    .yes li, .no li { padding: 7px 0; }
+    .yes li::before { content: "▸ "; color: var(--gold); }
+    .no li::before { content: "✕ "; color: #6b6356; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+    .step {
+      text-align: right;
+      padding: 28px 22px;
+      border: 1px solid var(--line);
+    }
+    .step + .step { border-right: 0; }
     .num {
-      width: 42px; height: 42px; border-radius: 50%;
-      margin: 0 auto 10px;
-      display: grid; place-items: center;
-      background: var(--gold); color: var(--navy); font-weight: 900;
+      font-family: "Amiri", serif;
+      color: var(--gold-2);
+      font-size: 1.7rem;
+      margin-bottom: 8px;
     }
-    .pay { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 20px; align-items: start; }
+    .step strong { display: block; margin-bottom: 6px; }
+    .step p { color: var(--muted); font-size: .95rem; font-weight: 300; }
+    .pay { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; align-items: start; }
     .pay-btn {
       width: 100%;
-      margin-top: 8px;
-      background: #163052;
-      color: #fff;
+      margin-top: 10px;
+      background: transparent;
+      color: var(--ivory);
       border: 1px solid var(--line);
     }
     .note {
-      background: rgba(201,162,39,0.08);
-      border: 1px dashed var(--line);
-      border-radius: 16px;
+      border: 1px solid var(--line);
       padding: 14px 16px;
-      color: var(--cream);
-      margin-top: 14px;
-      font-size: 0.95rem;
+      color: #d8d0c0;
+      margin-top: 16px;
+      font-size: 0.92rem;
+      font-weight: 300;
     }
     footer {
       border-top: 1px solid var(--line);
-      padding: 28px 0 40px;
+      padding: 40px 0 48px;
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       text-align: center;
     }
-    @media (max-width: 860px) {
-      .hero-grid, .grid-3, .grid-2, .steps, .pay, .nav-links { grid-template-columns: 1fr; display: grid; }
+    .foot-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: var(--gold-2);
+    }
+    .foot-brand img { width: 36px; height: 36px; border-radius: 50%; }
+    @media (max-width: 900px) {
+      .hero-grid, .grid-3, .grid-2, .pillars, .levels, .steps, .pay, .split, .nav-links {
+        grid-template-columns: 1fr;
+        display: grid;
+      }
       .nav-links { display: none; }
-      .hero { padding-top: 36px; }
+      .pillar, .level + .level, .step + .step { border-left: 0; border-right: 0; border-top: 0; }
+      .hero { padding: 48px 0 40px; }
+      section { padding: 56px 0; }
+      .hero-meta { gap: 16px; }
     }
   </style>
 </head>
@@ -166,14 +354,15 @@
     <div class="wrap nav">
       <a class="brand" href="#top">
         <img src="assets/logo-trading.png" alt="تعلم التداول بطريقة صحيحة" />
-        تعلم التداول بطريقة صحيحة
+        <span class="brand-name">تعلم التداول بطريقة صحيحة</span>
       </a>
       <nav class="nav-links">
-        <a href="#benefits">ماذا ستتلقى</a>
-        <a href="#levels">المستويات</a>
-        <a href="#pay">الاشتراك والدفع</a>
+        <a href="#await">ما ينتظرك</a>
+        <a href="#levels">المنهج</a>
+        <a href="#who">لمن هذا</a>
+        <a href="#pay">العضوية</a>
       </nav>
-      <a class="btn" href="#pay">اشترك شهرياً</a>
+      <a class="btn" href="#pay">طلب العضوية</a>
     </div>
   </header>
 
@@ -181,116 +370,180 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <span class="badge">مجتمع اشتراك شهري · بدون توصيات</span>
-          <h1>بيئة إيجابية لتعلّم التداول <span>بطريقة صحيحة</span></h1>
+          <div class="kicker">مجتمع خاص · معيار أعلى من السعر</div>
+          <h1>هنا لا تُشترى الإشارات.<br /><em>هنا تُبنى المنظومة.</em></h1>
           <p class="lead">
-            تدخل مجتمع عمل… مو جروب إشارات. تتعلم التحليل، تبني منظومة، وتلتزم بإدارة رأس المال
-            وسط ناس جادّين. الاشتراك يتجدد كل شهر.
+            عضوية شهرية في بيئة عمل… لا جروب توصيات. تتعلّم التحليل، تُحاسب على إدارة رأس المال،
+            وتصعد بمستويات واضحة وسط أعضاء يُختارون بعناية. المعيار صارم لأن النتيجة تُبنى على الانضباط، لا على الحماس.
           </p>
           <div class="hero-actions">
-            <a class="btn" href="#pay">ابدأ الاشتراك الشهري</a>
-            <a class="btn btn-ghost" href="#benefits">ماذا سيتلقى العضو؟</a>
+            <a class="btn" href="#pay">ابدأ طلب العضوية</a>
+            <a class="btn btn-ghost" href="#await">ماذا ينتظر العضو؟</a>
+          </div>
+          <div class="hero-meta">
+            <div><strong>لايف يومي</strong>جلسة لندن أو نيويورك</div>
+            <div><strong>ميتنغ شهري</strong>لقاء فردي لكل عضو</div>
+            <div><strong>3 مستويات</strong>والثالث يفتح العضوية الدائمة</div>
           </div>
         </div>
-        <aside class="price-card">
-          <div class="tag">الاشتراك الشهري</div>
+        <aside class="plaque">
+          <div class="tag">العضوية الشهرية</div>
           <div class="price">25$ <small>/ الشهر</small></div>
-          <p style="color:var(--muted)">أو ما يعادله بالدينار عبر CCP / Baridimob</p>
+          <p>رسوم دخول لمجتمع بمعيار — لا لدورة مسجّلة ولا لإشارات جاهزة. أو ما يعادله عبر CCP / Baridimob.</p>
           <ul>
-            <li>دخول ديسكورد + رول المشترك لمدة 30 يوماً</li>
-            <li>لايفات يومية · لندن أو نيويورك</li>
+            <li>دخول ديسكورد + رول المشترك 30 يوماً</li>
+            <li>لايفات يومية على الجلسة الحيّة</li>
             <li>ميتنغ شخصي مرة في الشهر</li>
-            <li>تجديد يدوي كل شهر بعد إثبات الدفع</li>
+            <li>منهج بمستويات… لا محتوى عشوائي</li>
           </ul>
-          <a class="btn" href="#pay" style="width:100%">طرق الدفع</a>
+          <a class="btn" href="#pay" style="width:100%">طرق الدخول والدفع</a>
         </aside>
       </div>
     </section>
 
-    <section id="benefits">
+    <div class="pillars">
+      <div class="pillar"><span>01</span>تعليم من التحليل إلى الدخول — بلا توصية تُملى عليك</div>
+      <div class="pillar"><span>02</span>بيئة إيجابية: الاستفادة من الخطأ، لا من التبرير</div>
+      <div class="pillar"><span>03</span>صعود بالمستوى… والثالث يُكافأ بعضوية مدى الحياة</div>
+      <div class="pillar"><span>04</span>من الاستراتيجية إلى شركات التمويل بانضباط الحساب</div>
+    </div>
+
+    <section id="await">
       <div class="wrap">
-        <h2>ماذا سيتلقى العضو عند دخوله؟</h2>
-        <p class="sub">هذا ما تحصل عليه داخل المجتمع — تعليم ومتابعة، وليست توصيات صفقات.</p>
+        <div class="kicker">ما ينتظر العضو</div>
+        <h2>لا تدخل لتستهلك محتوى.<br />تدخل لتُحاسب على تطورك.</h2>
+        <p class="sub">هذا ما تحصل عليه داخل المجتمع: تعليم، متابعة، ومعيار. ليست توصيات صفقات، وليست وعود أرباح.</p>
         <div class="grid-3">
           <article class="card">
-            <h3>1. لايفات يومية — لندن أو نيويورك</h3>
-            <p>تشوف طريقة عملنا من بداية التحليل إلى دخول الصفقة. بلا توصيات: نتعلم المنظومة، لا نُملى عليك الصفقة.</p>
+            <span class="idx">I</span>
+            <h3>لايفات يومية — لندن أو نيويورك</h3>
+            <p>تشاهد طريقة العمل من بداية التحليل إلى قرار الدخول. نتعلّم المنظومة معاً. لا أحد يُملي عليك الصفقة.</p>
           </article>
           <article class="card">
-            <h3>2. لايفات للأسئلة</h3>
-            <p>جلسات مخصصة للإجابة على أسئلتكم: تحليل، إدارة، شركات تمويل، أو عقبة في تطبيق النظام.</p>
+            <span class="idx">II</span>
+            <h3>لايفات للأسئلة</h3>
+            <p>جلسات مخصّصة لعقدتك الحقيقية: تحليل، إدارة، شركة تمويل، أو ثغرة في تطبيق النظام.</p>
           </article>
           <article class="card">
-            <h3>3. ميتنغ شخصي مرة في الشهر</h3>
-            <p>لقاء فردي لكل عضو مرة شهرياً لمراجعة تقدمه ونقاط ضعفه — مو متابعة يومية كالتدريب الشخصي.</p>
+            <span class="idx">III</span>
+            <h3>ميتنغ شخصي كل شهر</h3>
+            <p>لقاء فردي لمراجعة تقدمك ونقاط ضعفك. مرة شهرياً — ليست متابعة يومية كالتدريب الخاص.</p>
           </article>
           <article class="card">
-            <h3>4. بيئة إيجابية</h3>
-            <p>تستفيد من أخطاء غيرك ومن خبرته. السلبية والتبرير لا مكان لهما. الأعضاء يُختارون بعناية.</p>
+            <span class="idx">IV</span>
+            <h3>بيئة مختارة</h3>
+            <p>تستفيد من أخطاء غيرك ومن خبرته. السلبية والتبرير لا مكان لهما. العضوية ليست مفتوحة لكل من يدفع فقط.</p>
           </article>
           <article class="card">
-            <h3>5. تعلم بنظام</h3>
-            <p>كل مستوى له محتواه. تتطور أسبوع بعد أسبوع، بدون عشوائية «فيديو اليوم».</p>
+            <span class="idx">V</span>
+            <h3>تعلّم بنظام</h3>
+            <p>كل مستوى له محتواه ومعياره. تتطور أسبوعاً بعد أسبوع، بلا عشوائية «فيديو اليوم».</p>
           </article>
           <article class="card">
-            <h3>6. من الاستراتيجية إلى التمويل</h3>
-            <p>اختيار الاستراتيجية، الإدارة المالية، ثم حسابات شركات التمويل وكيفية العمل معها بانضباط.</p>
+            <span class="idx">VI</span>
+            <h3>من الاستراتيجية إلى التمويل</h3>
+            <p>اختيار الاستراتيجية، الإدارة المالية، ثم التعامل مع شركات التمويل بحساب منضبط — لا بحساب منفوخ.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="levels" style="background:#0c1c34">
+    <section id="levels" class="section-dark">
       <div class="wrap">
-        <h2>ثلاث مستويات… والثالث يفتح باب العضوية الدائمة</h2>
-        <p class="sub">الصعود بالانضباط في الحسابات والتطبيق، مو بالكلام.</p>
-        <div class="grid-3">
-          <article class="card"><h3>المستوى 1</h3><p>البداية الصحيحة: النماذج، القواعد، وأول منظومة مبسّطة.</p></article>
-          <article class="card"><h3>المستوى 2</h3><p>تعميق الإدارة والموجة/الرقم، ومراجعة أسبوعية لتقدمك.</p></article>
-          <article class="card"><h3>المستوى 3</h3><p>انضباط مثبت على الحسابات → <strong style="color:var(--gold-2)">اشتراك مجاني مدى الحياة</strong>.</p></article>
+        <div class="kicker">المنهج</div>
+        <h2>ثلاث مستويات… والثالث يفتح باب البقاء.</h2>
+        <p class="sub">الصعود بالانضباط على الحسابات والتطبيق، لا بالكلام ولا بطول البقاء في الشات.</p>
+        <div class="levels">
+          <article class="level">
+            <div class="n">01</div>
+            <h3>الأساس</h3>
+            <p>البداية الصحيحة: النماذج، القواعد، وأول منظومة مبسّطة تُطبَّق لا تُحفظ.</p>
+          </article>
+          <article class="level">
+            <div class="n">02</div>
+            <h3>التعميق</h3>
+            <p>تعميق الإدارة والموجة والرقم، مع مراجعة أسبوعية لتقدمك — أين أنت، وما الذي ينقصك.</p>
+          </article>
+          <article class="level featured">
+            <div class="n">03</div>
+            <h3>الانضباط المثبت</h3>
+            <p>انضباط ظاهر على الحسابات → <strong style="color:var(--gold-2)">اشتراك مجاني مدى الحياة</strong>. هذا ليس تخفيضاً تسويقياً… هو معيار تبلُغه.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="who">
       <div class="wrap">
-        <h2>كيف تدخل؟</h2>
-        <p class="sub">الدفع يدوي في البداية. الرول يُجدَّد 30 يوماً بعد كل تحويل.</p>
+        <div class="kicker">معيار الدخول</div>
+        <h2>المجتمع ليس للجميع.<br />وهذا مقصود.</h2>
+        <p class="sub">25 دولاراً ليست ثمناً رخيصاً لمن يريد إشارات، وهي مناسبة لمن يريد بيئة تُخرِج غير الجاد.</p>
+        <div class="split">
+          <div class="yes">
+            <h3>هذا المكان لك إذا</h3>
+            <ul>
+              <li>تريد بناء منظومة، لا نسخ صفقات غيرك</li>
+              <li>تقبل القواعد والمساءلة الشهرية</li>
+              <li>تبحث عن بيئة هادئة وجادّة</li>
+              <li>تفهم أن إدارة رأس المال جزء من التعلّم لا هامش عليه</li>
+            </ul>
+          </div>
+          <div class="no">
+            <h3>لن يناسبك إذا</h3>
+            <ul>
+              <li>تريد توصيات جاهزة أو نسخ تداول</li>
+              <li>تبحث عن ربح سريع دون انضباط</li>
+              <li>لا تتحمل بيئة فيها معيار وقواعد</li>
+              <li>تريد تدريباً شخصياً يومياً — ذلك مسار آخر</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark">
+      <div class="wrap">
+        <div class="kicker">مسار الدخول</div>
+        <h2>كيف تصبح عضواً؟</h2>
+        <p class="sub">الدفع يدوي في هذه المرحلة. الرول يُجدَّد ثلاثين يوماً بعد كل تحويل. لا تجديد تلقائي من البنك.</p>
         <div class="steps">
-          <div class="card step"><div class="num">1</div><strong>اختر طريقة الدفع</strong><p>CCP أو Baridimob أو USDT</p></div>
-          <div class="card step"><div class="num">2</div><strong>حوّل الاشتراك الشهري</strong><p>25 دولار أو ما يعادلها</p></div>
-          <div class="card step"><div class="num">3</div><strong>أرسل إثبات الدفع</strong><p>سكرين عبر واتساب</p></div>
-          <div class="card step"><div class="num">4</div><strong>تستلم الدعوة</strong><p>ديسكورد + رول 30 يوماً</p></div>
+          <div class="step"><div class="num">01</div><strong>اختر طريقة الدفع</strong><p>Binance USDT، أو CCP / Baridimob داخل الجزائر</p></div>
+          <div class="step"><div class="num">02</div><strong>حوّل رسوم الشهر</strong><p>25 دولاراً — أو ما يعادلها بالدينار</p></div>
+          <div class="step"><div class="num">03</div><strong>أرسل إثبات الدفع</strong><p>الاسم الكامل + السكرين عبر واتساب</p></div>
+          <div class="step"><div class="num">04</div><strong>تستلم الدعوة</strong><p>ديسكورد + رول المشترك لثلاثين يوماً</p></div>
         </div>
       </div>
     </section>
 
-    <section id="pay" style="background:#0c1c34">
+    <section id="pay">
       <div class="wrap pay">
         <div>
+          <div class="kicker">العضوية والدفع</div>
           <h2>طرق الدفع</h2>
-          <p class="sub">اشتراك شهري. إذا لم يُجدَّد في نهاية الثلاثين يوماً يُرفع رول الدخول حتى الدفع التالي.</p>
+          <p class="sub">اشتراك شهري. إن لم يُجدَّد مع نهاية الثلاثين يوماً يُرفع رول الدخول حتى التحويل التالي.</p>
           <div class="grid-2">
             <article class="card">
-              <h3>CCP / Baridimob</h3>
-              <p>للمقيمين في الجزائر. نرسل لك رقم الحساب والمبلغ بالدينار بعد رسالة واتساب.</p>
+              <span class="idx">USDT</span>
+              <h3>Binance</h3>
+              <p>25 دولاراً شهرياً. عنوان المحفظة يُرسل لك بعد تأكيد الرغبة في الاشتراك — لا يُعرض هنا.</p>
             </article>
             <article class="card">
-              <h3>USDT / Binance</h3>
-              <p>25 دولار شهرياً. عنوان المحفظة يُرسل لك بعد تأكيد الرغبة في الاشتراك.</p>
+              <span class="idx">DZD</span>
+              <h3>CCP / Baridimob</h3>
+              <p>للمقيمين في الجزائر. رقم الحساب والمبلغ بالدينار يُرسلان بعد رسالة واتساب.</p>
             </article>
           </div>
           <p class="note">
-            العرض السنوي اختياري: ادفع سنة واحصل على شهرين مجاناً.
-            لا يوجد تجديد تلقائي من البنك — أنت تتحكم في كل شهر.
+            العرض السنوي اختياري: ادفع سنة واحصل على شهرين إضافيين. أنت تتحكم في كل تجديد — لا خصم تلقائي.
           </p>
         </div>
-        <aside class="price-card">
-          <h3 style="color:var(--gold-2);margin-bottom:8px">أرسل إثبات الدفع</h3>
-          <p>بعد التحويل أرسل: الاسم الكامل + صورة الإثبات + طريقة الدفع.</p>
-          <a class="btn" id="waBtn" href="#" target="_blank" rel="noopener" style="width:100%;margin-top:16px">واتساب الاشتراك</a>
-          <button class="btn pay-btn" id="copyNote" type="button">نسخ رسالة جاهزة</button>
-          <p class="note" id="waHint">يفتح واتساب برسالة جاهزة: الاشتراك الشهري 25 دولار عبر Binance.</p>
+        <aside class="plaque">
+          <div class="tag">طلب العضوية</div>
+          <h3 class="serif" style="font-size:1.55rem;margin:8px 0 10px">أرسل إثبات الدفع</h3>
+          <p>بعد التحويل: الاسم الكامل + صورة الإثبات + طريقة الدفع. نراجع الطلب ثم نفتح لك الباب.</p>
+          <a class="btn" id="waBtn" href="#" target="_blank" rel="noopener" style="width:100%;margin-top:20px">واتساب العضوية</a>
+          <button class="btn pay-btn" id="copyNote" type="button">نسخ رسالة الطلب</button>
+          <p class="note" id="waHint">يفتح واتساب برسالة جاهزة لطلب العضوية الشهرية — 25 دولار عبر Binance.</p>
         </aside>
       </div>
     </section>
@@ -298,6 +551,10 @@
 
   <footer>
     <div class="wrap">
+      <div class="foot-brand">
+        <img src="assets/logo-trading.png" alt="" />
+        <span class="serif">تعلم التداول بطريقة صحيحة</span>
+      </div>
       محتوى تعليمي فقط. لسنا مستشارين ماليين ولا نقدّم توصيات صفقات.
       القرار ومسؤولية رأس المال عليك. التوفيق من الله ثم الاجتهاد والانضباط.
     </div>
@@ -305,7 +562,7 @@
 
   <script>
     var WHATSAPP = "213654454478";
-    var MSG = "السلام عليكم، أريد الاشتراك الشهري في مجتمع تعلم التداول بطريقة صحيحة (25 دولار Binance).";
+    var MSG = "السلام عليكم، أريد طلب العضوية الشهرية في مجتمع تعلم التداول بطريقة صحيحة (25 دولار Binance).";
     var wa = document.getElementById("waBtn");
     wa.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(MSG);
     document.getElementById("copyNote").addEventListener("click", function () {
