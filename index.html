@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تعلم التداول بطريقة صحيحة | مجتمع الاشتراك الشهري</title>
+  <meta name="description" content="مجتمع إيجابي لتعلم التداول بطريقة صحيحة. لايفات يومية، إدارة رأس المال، ومنظومة من الألف إلى الياء. اشتراك شهري 25 دولار عبر Binance — بدون توصيات." />
+  <meta name="theme-color" content="#0a1628" />
+  <link rel="icon" href="assets/logo-trading.png" type="image/png" />
+  <meta property="og:title" content="تعلم التداول بطريقة صحيحة" />
+  <meta property="og:description" content="مجتمع اشتراك شهري 25$ عبر Binance. تعليم ومنظومة — بدون توصيات." />
+  <meta property="og:image" content="assets/logo-trading.png" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0a1628;
+      --navy-2: #12203a;
+      --gold: #c9a227;
+      --gold-2: #e8c547;
+      --cream: #f4efe4;
+      --muted: #9aa6b8;
+      --card: rgba(18, 32, 58, 0.92);
+      --line: rgba(201, 162, 39, 0.35);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Tajawal", sans-serif;
+      background: var(--navy);
+      color: #fff;
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin-inline: auto; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(180deg, var(--gold-2), var(--gold));
+      color: var(--navy);
+      font-weight: 800;
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 28px;
+      cursor: pointer;
+      font-size: 1.05rem;
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--gold-2);
+      border: 1px solid var(--line);
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(10, 22, 40, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      gap: 12px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; color: var(--gold-2); }
+    .brand img { width: 52px; height: 52px; border-radius: 50%; }
+    .nav-links { display: flex; gap: 18px; color: var(--muted); font-weight: 700; font-size: 0.95rem; }
+    .hero {
+      padding: 64px 0 48px;
+      background:
+        radial-gradient(900px 420px at 80% -10%, rgba(201,162,39,0.18), transparent 60%),
+        linear-gradient(180deg, #0c1c34, var(--navy));
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .badge {
+      display: inline-block;
+      border: 1px solid var(--line);
+      color: var(--gold-2);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.7rem); line-height: 1.35; margin-bottom: 14px; }
+    h1 span { color: var(--gold-2); }
+    .lead { color: var(--cream); font-size: 1.12rem; max-width: 40rem; margin-bottom: 24px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .price-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    }
+    .price-card .tag { color: var(--gold-2); font-weight: 800; }
+    .price { font-size: 3rem; font-weight: 900; color: var(--gold-2); line-height: 1; margin: 8px 0; }
+    .price small { font-size: 1.05rem; color: var(--muted); font-weight: 700; }
+    .price-card ul { list-style: none; margin: 16px 0 22px; color: var(--cream); }
+    .price-card li { padding: 7px 0; }
+    .price-card li::before { content: "✓ "; color: var(--gold-2); font-weight: 900; }
+    section { padding: 64px 0; }
+    h2 { font-size: 1.9rem; margin-bottom: 8px; }
+    .sub { color: var(--muted); margin-bottom: 28px; }
+    .grid-3, .grid-2 { display: grid; gap: 16px; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: 1fr 1fr; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px;
+    }
+    .card h3 { color: var(--gold-2); margin-bottom: 8px; font-size: 1.15rem; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .step { text-align: center; padding: 20px 14px; }
+    .num {
+      width: 42px; height: 42px; border-radius: 50%;
+      margin: 0 auto 10px;
+      display: grid; place-items: center;
+      background: var(--gold); color: var(--navy); font-weight: 900;
+    }
+    .pay { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 20px; align-items: start; }
+    .pay-btn {
+      width: 100%;
+      margin-top: 8px;
+      background: #163052;
+      color: #fff;
+      border: 1px solid var(--line);
+    }
+    .note {
+      background: rgba(201,162,39,0.08);
+      border: 1px dashed var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+      color: var(--cream);
+      margin-top: 14px;
+      font-size: 0.95rem;
+    }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+    @media (max-width: 860px) {
+      .hero-grid, .grid-3, .grid-2, .steps, .pay, .nav-links { grid-template-columns: 1fr; display: grid; }
+      .nav-links { display: none; }
+      .hero { padding-top: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">
+        <img src="assets/logo-trading.png" alt="تعلم التداول بطريقة صحيحة" />
+        تعلم التداول بطريقة صحيحة
+      </a>
+      <nav class="nav-links">
+        <a href="#benefits">ماذا ستتلقى</a>
+        <a href="#levels">المستويات</a>
+        <a href="#pay">الاشتراك والدفع</a>
+      </nav>
+      <a class="btn" href="#pay">اشترك شهرياً</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="badge">مجتمع اشتراك شهري · بدون توصيات</span>
+          <h1>بيئة إيجابية لتعلّم التداول <span>بطريقة صحيحة</span></h1>
+          <p class="lead">
+            تدخل مجتمع عمل… مو جروب إشارات. تتعلم التحليل، تبني منظومة، وتلتزم بإدارة رأس المال
+            وسط ناس جادّين. الاشتراك يتجدد كل شهر.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#pay">ابدأ الاشتراك الشهري</a>
+            <a class="btn btn-ghost" href="#benefits">ماذا سيتلقى العضو؟</a>
+          </div>
+        </div>
+        <aside class="price-card">
+          <div class="tag">الاشتراك الشهري</div>
+          <div class="price">25$ <small>/ الشهر</small></div>
+          <p style="color:var(--muted)">أو ما يعادله بالدينار عبر CCP / Baridimob</p>
+          <ul>
+            <li>دخول ديسكورد + رول المشترك لمدة 30 يوماً</li>
+            <li>لايفات يومية · لندن أو نيويورك</li>
+            <li>ميتنغ شخصي مرة في الشهر</li>
+            <li>تجديد يدوي كل شهر بعد إثبات الدفع</li>
+          </ul>
+          <a class="btn" href="#pay" style="width:100%">طرق الدفع</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="benefits">
+      <div class="wrap">
+        <h2>ماذا سيتلقى العضو عند دخوله؟</h2>
+        <p class="sub">هذا ما تحصل عليه داخل المجتمع — تعليم ومتابعة، وليست توصيات صفقات.</p>
+        <div class="grid-3">
+          <article class="card">
+            <h3>1. لايفات يومية — لندن أو نيويورك</h3>
+            <p>تشوف طريقة عملنا من بداية التحليل إلى دخول الصفقة. بلا توصيات: نتعلم المنظومة، لا نُملى عليك الصفقة.</p>
+          </article>
+          <article class="card">
+            <h3>2. لايفات للأسئلة</h3>
+            <p>جلسات مخصصة للإجابة على أسئلتكم: تحليل، إدارة، شركات تمويل، أو عقبة في تطبيق النظام.</p>
+          </article>
+          <article class="card">
+            <h3>3. ميتنغ شخصي مرة في الشهر</h3>
+            <p>لقاء فردي لكل عضو مرة شهرياً لمراجعة تقدمه ونقاط ضعفه — مو متابعة يومية كالتدريب الشخصي.</p>
+          </article>
+          <article class="card">
+            <h3>4. بيئة إيجابية</h3>
+            <p>تستفيد من أخطاء غيرك ومن خبرته. السلبية والتبرير لا مكان لهما. الأعضاء يُختارون بعناية.</p>
+          </article>
+          <article class="card">
+            <h3>5. تعلم بنظام</h3>
+            <p>كل مستوى له محتواه. تتطور أسبوع بعد أسبوع، بدون عشوائية «فيديو اليوم».</p>
+          </article>
+          <article class="card">
+            <h3>6. من الاستراتيجية إلى التمويل</h3>
+            <p>اختيار الاستراتيجية، الإدارة المالية، ثم حسابات شركات التمويل وكيفية العمل معها بانضباط.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="levels" style="background:#0c1c34">
+      <div class="wrap">
+        <h2>ثلاث مستويات… والثالث يفتح باب العضوية الدائمة</h2>
+        <p class="sub">الصعود بالانضباط في الحسابات والتطبيق، مو بالكلام.</p>
+        <div class="grid-3">
+          <article class="card"><h3>المستوى 1</h3><p>البداية الصحيحة: النماذج، القواعد، وأول منظومة مبسّطة.</p></article>
+          <article class="card"><h3>المستوى 2</h3><p>تعميق الإدارة والموجة/الرقم، ومراجعة أسبوعية لتقدمك.</p></article>
+          <article class="card"><h3>المستوى 3</h3><p>انضباط مثبت على الحسابات → <strong style="color:var(--gold-2)">اشتراك مجاني مدى الحياة</strong>.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>كيف تدخل؟</h2>
+        <p class="sub">الدفع يدوي في البداية. الرول يُجدَّد 30 يوماً بعد كل تحويل.</p>
+        <div class="steps">
+          <div class="card step"><div class="num">1</div><strong>اختر طريقة الدفع</strong><p>CCP أو Baridimob أو USDT</p></div>
+          <div class="card step"><div class="num">2</div><strong>حوّل الاشتراك الشهري</strong><p>25 دولار أو ما يعادلها</p></div>
+          <div class="card step"><div class="num">3</div><strong>أرسل إثبات الدفع</strong><p>سكرين عبر واتساب</p></div>
+          <div class="card step"><div class="num">4</div><strong>تستلم الدعوة</strong><p>ديسكورد + رول 30 يوماً</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pay" style="background:#0c1c34">
+      <div class="wrap pay">
+        <div>
+          <h2>طرق الدفع</h2>
+          <p class="sub">اشتراك شهري. إذا لم يُجدَّد في نهاية الثلاثين يوماً يُرفع رول الدخول حتى الدفع التالي.</p>
+          <div class="grid-2">
+            <article class="card">
+              <h3>CCP / Baridimob</h3>
+              <p>للمقيمين في الجزائر. نرسل لك رقم الحساب والمبلغ بالدينار بعد رسالة واتساب.</p>
+            </article>
+            <article class="card">
+              <h3>USDT / Binance</h3>
+              <p>25 دولار شهرياً. عنوان المحفظة يُرسل لك بعد تأكيد الرغبة في الاشتراك.</p>
+            </article>
+          </div>
+          <p class="note">
+            العرض السنوي اختياري: ادفع سنة واحصل على شهرين مجاناً.
+            لا يوجد تجديد تلقائي من البنك — أنت تتحكم في كل شهر.
+          </p>
+        </div>
+        <aside class="price-card">
+          <h3 style="color:var(--gold-2);margin-bottom:8px">أرسل إثبات الدفع</h3>
+          <p>بعد التحويل أرسل: الاسم الكامل + صورة الإثبات + طريقة الدفع.</p>
+          <a class="btn" id="waBtn" href="#" target="_blank" rel="noopener" style="width:100%;margin-top:16px">واتساب الاشتراك</a>
+          <button class="btn pay-btn" id="copyNote" type="button">نسخ رسالة جاهزة</button>
+          <p class="note" id="waHint">يفتح واتساب برسالة جاهزة: الاشتراك الشهري 25 دولار عبر Binance.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      محتوى تعليمي فقط. لسنا مستشارين ماليين ولا نقدّم توصيات صفقات.
+      القرار ومسؤولية رأس المال عليك. التوفيق من الله ثم الاجتهاد والانضباط.
+    </div>
+  </footer>
+
+  <script>
+    var WHATSAPP = "213654454478";
+    var MSG = "السلام عليكم، أريد الاشتراك الشهري في مجتمع تعلم التداول بطريقة صحيحة (25 دولار Binance).";
+    var wa = document.getElementById("waBtn");
+    wa.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(MSG);
+    document.getElementById("copyNote").addEventListener("click", function () {
+      navigator.clipboard.writeText(MSG).then(function () {
+        document.getElementById("copyNote").textContent = "تم النسخ";
+      });
+    });
+  </script>
+</body>
+</html>
