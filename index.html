@@ -260,6 +260,85 @@
     }
     .card h3 { color: var(--ivory); font-size: 1.28rem; margin-bottom: 10px; }
     .card p { color: var(--muted); font-weight: 300; }
+    #await {
+      position: relative;
+      background:
+        radial-gradient(720px 280px at 80% 0%, rgba(198,161,91,.12), transparent 60%),
+        var(--bg);
+    }
+    .gains-intro {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 36px;
+    }
+    .gains-intro .sub { margin-bottom: 0; }
+    .gains-stamp {
+      border: 1px solid var(--gold-dim);
+      padding: 18px 20px;
+      color: var(--gold-2);
+      font-family: "Amiri", serif;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+    .gains-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .gain {
+      position: relative;
+      padding: 32px 26px 28px;
+      background: linear-gradient(180deg, rgba(20,28,42,.95), rgba(8,12,20,.92));
+      border: 1px solid var(--line);
+      overflow: hidden;
+      min-height: 280px;
+      transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+    }
+    .gain::before {
+      content: "";
+      position: absolute;
+      top: 0; right: 0; left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-2), transparent 80%);
+    }
+    .gain:hover {
+      border-color: rgba(198,161,91,.55);
+      transform: translateY(-4px);
+      box-shadow: 0 24px 50px rgba(0,0,0,.35);
+    }
+    .gain .idx {
+      font-size: 2.1rem;
+      color: var(--gold-2);
+      margin-bottom: 6px;
+      line-height: 1;
+    }
+    .gain h3 {
+      color: var(--ivory);
+      font-size: 1.42rem;
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+    .gain p { color: #cfc6b4; font-weight: 300; font-size: 1.02rem; }
+    .gain.spotlight {
+      background: linear-gradient(180deg, rgba(198,161,91,.16), rgba(10,15,24,.94));
+      border-color: rgba(198,161,91,.42);
+    }
+    .gains-cta {
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 22px 26px;
+      border: 1px solid var(--gold-dim);
+      background: rgba(198,161,91,.06);
+    }
+    .gains-cta p {
+      color: var(--ivory);
+      font-family: "Amiri", serif;
+      font-size: 1.28rem;
+      line-height: 1.55;
+    }
+    .gains-cta span { display: block; color: var(--muted); font-family: "IBM Plex Sans Arabic", sans-serif; font-size: .92rem; font-weight: 300; margin-top: 4px; }
     .levels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
     .level {
       padding: 36px 28px;
@@ -348,10 +427,12 @@
     }
     .foot-brand img { width: 36px; height: 36px; border-radius: 50%; }
     @media (max-width: 900px) {
-      .hero-grid, .grid-3, .grid-2, .pillars, .levels, .steps, .pay, .split, .nav-links {
+      .hero-grid, .grid-3, .grid-2, .pillars, .levels, .steps, .pay, .split, .nav-links, .gains-grid, .gains-intro, .gains-cta {
         grid-template-columns: 1fr;
         display: grid;
       }
+      .gains-cta { text-align: center; }
+      .gains-cta .btn { width: 100%; }
       .nav-links { display: none; }
       .pillar, .level + .level, .step + .step { border-left: 0; border-right: 0; border-top: 0; }
       .hero { padding: 48px 0 40px; }
@@ -402,10 +483,10 @@
           <div class="price">25$ <small>/ الشهر</small></div>
           <p>رسوم دخول لمجتمع بمعيار — لا لدورة مسجّلة ولا لإشارات جاهزة. أو ما يعادله عبر CCP / Baridimob.</p>
           <ul>
-            <li>دخول ديسكورد + رول المشترك 30 يوماً</li>
-            <li>لايفات يومية على الجلسة الحيّة</li>
-            <li>ميتنغ شخصي مرة في الشهر</li>
-            <li>منهج بمستويات… لا محتوى عشوائي</li>
+            <li>لايف يومي على جلسة لندن أو نيويورك</li>
+            <li>لايف أسئلة + ميتنغ شخصي كل شهر</li>
+            <li>مسار بثلاث مستويات حتى حساب التمويل</li>
+            <li>بيئة مختارة… تتجدد عضويتك كل ثلاثين يوماً</li>
           </ul>
           <a class="btn" href="#pay" style="width:100%">طرق الدخول والدفع</a>
         </aside>
@@ -421,40 +502,51 @@
 
     <section id="await">
       <div class="wrap">
-        <div class="kicker">ما ينتظر العضو</div>
-        <h2>لا تدخل لتستهلك محتوى.<br />تدخل لتُحاسب على تطورك.</h2>
-        <p class="sub">هذا ما تحصل عليه داخل المجتمع: تعليم، متابعة، ومعيار. ليست توصيات صفقات، وليست وعود أرباح.</p>
-        <div class="grid-3">
-          <article class="card">
-            <span class="idx">I</span>
-            <h3>لايفات يومية — لندن أو نيويورك</h3>
-            <p>تشاهد طريقة العمل من بداية التحليل إلى قرار الدخول. نتعلّم المنظومة معاً. لا أحد يُملي عليك الصفقة.</p>
+        <div class="gains-intro">
+          <div>
+            <div class="kicker">ماذا يحصل عليه العضو</div>
+            <h2>ستّ امتيازات تدخل معك…<br />وتتجدد مع كل شهر.</h2>
+            <p class="sub">هذا ليس محتوى يُستهلك ويُنسى. هذا حضور يومي، مساءلة شهرية، ومسار واضح يصعد بك من الأساس إلى حساب التمويل. الاشتراك الشهري يبقيك داخل المعيار — لا خارجه.</p>
+          </div>
+          <div class="gains-stamp">كل شهر تجدد دخولك.<br />كل شهر ترفع مستواك.</div>
+        </div>
+        <div class="gains-grid">
+          <article class="gain spotlight">
+            <span class="idx">01</span>
+            <h3>لايف يومي على الجلسة الحيّة</h3>
+            <p>لندن أو نيويورك. تشهد التحليل وهو يُصنع أمامك: من القراءة إلى قرار الدخول. تتعلّم الطريقة… ولا تُملى عليك الصفقة.</p>
           </article>
-          <article class="card">
-            <span class="idx">II</span>
-            <h3>لايفات للأسئلة</h3>
-            <p>جلسات مخصّصة لعقدتك الحقيقية: تحليل، إدارة، شركة تمويل، أو ثغرة في تطبيق النظام.</p>
+          <article class="gain">
+            <span class="idx">02</span>
+            <h3>مساحة للسؤال بلا حرج</h3>
+            <p>لايفات مخصّصة لعقدتك الحقيقية: تحليل، ستوب، إدارة، أو شركة تمويل. السؤال هنا جزء من التعلّم، لا ضعف يُخفى.</p>
           </article>
-          <article class="card">
-            <span class="idx">III</span>
-            <h3>ميتنغ شخصي كل شهر</h3>
-            <p>لقاء فردي لمراجعة تقدمك ونقاط ضعفك. مرة شهرياً — ليست متابعة يومية كالتدريب الخاص.</p>
+          <article class="gain spotlight">
+            <span class="idx">03</span>
+            <h3>لقاء خاص بك كل شهر</h3>
+            <p>ميتنغ فردي لمراجعة تقدمك ونقاط ضعفك. لست رقماً في شات. مرة في الشهر تُحاسب على تطورك وتُصحَّح مسارك.</p>
           </article>
-          <article class="card">
-            <span class="idx">IV</span>
-            <h3>بيئة مختارة</h3>
-            <p>تستفيد من أخطاء غيرك ومن خبرته. السلبية والتبرير لا مكان لهما. العضوية ليست مفتوحة لكل من يدفع فقط.</p>
+          <article class="gain">
+            <span class="idx">04</span>
+            <h3>بيئة ترفعك لا تستنزفك</h3>
+            <p>أعضاء يُختارون بعناية. تستفيد من الخطأ الحقيقي ومن الخبرة الهادئة. السلبية والتبرير لا مكان لهما هنا.</p>
           </article>
-          <article class="card">
-            <span class="idx">V</span>
-            <h3>تعلّم بنظام</h3>
-            <p>المستوى 1 أساس ودخول وستوب. المستوى 2 بدون أخطاء المبتدئ. المستوى 3 تمويل وإدارة خاصة. بلا عشوائية «فيديو اليوم».</p>
+          <article class="gain">
+            <span class="idx">05</span>
+            <h3>مسار بثلاث درجات واضح</h3>
+            <p>من البداية الصحيحة، إلى التداول بلا أخطاء المبتدئ، إلى حساب التمويل. كل شهر تعرف أين أنت… وإلى أين تصعد.</p>
           </article>
-          <article class="card">
-            <span class="idx">VI</span>
-            <h3>من الاستراتيجية إلى التمويل</h3>
-            <p>اختيار الاستراتيجية، الإدارة المالية، ثم التعامل مع شركات التمويل بحساب منضبط — لا بحساب منفوخ.</p>
+          <article class="gain spotlight">
+            <span class="idx">06</span>
+            <h3>من استراتيجيتك إلى شركة التمويل</h3>
+            <p>تختار ما يناسبك بمعايير، تبني إدارة رأس المال، ثم تعمل مع التمويل بحساب منضبط. الانضباط المثبت يفتح العضوية مدى الحياة.</p>
           </article>
+        </div>
+        <div class="gains-cta">
+          <p>خمسة وعشرون دولاراً في الشهر… مقابل حضور، مساءلة، ومسار لا يُشترى جاهزاً.
+            <span>إذا كنت مستعداً للمعيار، اطلب عضويتك هذا الشهر.</span>
+          </p>
+          <a class="btn" href="#pay">اطلب العضوية الشهرية</a>
         </div>
       </div>
     </section>
