@@ -235,6 +235,15 @@
       padding: 12px 14px;
     }
     .field textarea { min-height: 96px; resize: vertical; }
+    .wa-scan { text-align: center; }
+    .wa-scan p { color: var(--muted); margin: 4px 0 10px; font-size: 0.95rem; }
+    .wa-scan img {
+      width: min(260px, 100%);
+      border-radius: 18px;
+      display: block;
+      margin-inline: auto;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.28);
+    }
     .check {
       display: flex;
       align-items: flex-start;
@@ -464,52 +473,40 @@
         <p class="sub">كل من يطلب الدخول يجيب على هذه الأسئلة. ليست امتحاناً… هي لنعرف إن كان هذا المحيط يناسبك، وإن كنت ستعمل داخله لا تكتفي بالمشاهدة.</p>
         <form class="card apply-form" id="applyForm">
           <div class="field">
-            <label for="fullName">الاسم الكامل</label>
-            <input id="fullName" name="fullName" required maxlength="80" autocomplete="name" />
+            <label for="fullName">الاسم</label>
+            <span>نرجو أن يُوضع هذا الاسم في ديسكورد، بعيداً عن أسماء الإشارات والأرقام والرموز… لأن هناك تنقيطاً داخل المجتمع.</span>
+            <input id="fullName" name="fullName" required maxlength="80" autocomplete="name" placeholder="اسمك كما سيظهر في ديسكورد" />
           </div>
           <div class="field">
-            <label for="why">لماذا تريد الدخول إلى هذا المجتمع؟</label>
-            <span>اكتب بوضوح. إجابات «أبغى أربح» وحدها لا تكفي.</span>
-            <textarea id="why" name="why" required maxlength="400" placeholder="ما الذي تبحث عنه هنا؟"></textarea>
-          </div>
-          <div class="grid-2">
-            <div class="field">
-              <label for="experience">ما خبرتك في التداول؟</label>
-              <select id="experience" name="experience" required>
-                <option value="">اختر</option>
-                <option>لم أبدأ بعد</option>
-                <option>أقل من سنة</option>
-                <option>من سنة إلى ثلاث سنوات</option>
-                <option>أكثر من ثلاث سنوات</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="signals">هل تبحث عن توصيات صفقات أو نسخ تداول؟</label>
-              <select id="signals" name="signals" required>
-                <option value="">اختر</option>
-                <option>لا. أريد أن أتعلّم وأبني منظومة</option>
-                <option>نعم. أريد توصيات جاهزة</option>
-              </select>
-            </div>
-          </div>
-          <div class="field">
-            <label for="commit">هل تلتزم بالعمل والتطبيق داخل المجتمع؟</label>
-            <select id="commit" name="commit" required>
+            <label for="experience">ما هي خبرتك في التداول؟</label>
+            <select id="experience" name="experience" required>
               <option value="">اختر</option>
-              <option>نعم. سأعمل وأسأل وأطبّق، لا أكتفي بالمشاهدة</option>
-              <option>أفضل المتابعة بالمشاهدة فقط</option>
+              <option>مبتدئ — جديد، لا أعرف النماذج الفنية ولا طريقة الدخول إلى الصفقة</option>
+              <option>متوسط — أعرف التحليل والدخول إلى الصفقة والأساسيات</option>
             </select>
           </div>
           <div class="field">
-            <label for="expect">ماذا تتوقع أن تتلقى خلال أول شهر؟</label>
-            <textarea id="expect" name="expect" required maxlength="400" placeholder="تعليم، لايفات، مساءلة… اكتب توقعك بصدق."></textarea>
+            <label for="commit">هل تلتزم بالعمل والتطبيق لا بالمشاهدة؟</label>
+            <select id="commit" name="commit" required>
+              <option value="">اختر</option>
+              <option>نعم</option>
+              <option>لا</option>
+            </select>
           </div>
-          <label class="check">
-            <input type="checkbox" id="accept" name="accept" required />
-            <span>أفهم أن هذا مجتمع تعليم وعمل، وليس جروب إشارات، وأن المعلومة بلا تطبيق لن تنفعني.</span>
-          </label>
+          <div class="field">
+            <label for="funded">هل أنت جاهز مادياً بعد التعلّم لشراء حساب تمويل والعمل عليه؟</label>
+            <select id="funded" name="funded" required>
+              <option value="">اختر</option>
+              <option>نعم</option>
+              <option>لا</option>
+            </select>
+          </div>
           <p class="form-error" id="formError">أجب على كل الأسئلة قبل إرسال طلب الدخول.</p>
           <button class="btn" type="submit">أرسل طلب الدخول عبر واتساب</button>
+          <div class="wa-scan">
+            <p>واتساب المجتمع الرسمي. طلب الدخول يُرسل بعد الإجابة عبر الزر أعلاه.</p>
+            <img src="assets/whatsapp-qr.png" alt="رمز واتساب تعلم التداول بطريقة صحيحة" />
+          </div>
           <p class="note">بعد الإرسال نراجع إجاباتك. إن ناسبك المحيط، نرسل تفاصيل التحويل ثم الدعوة.</p>
         </form>
       </div>
@@ -594,34 +591,31 @@
   </footer>
 
   <script>
-    var WHATSAPP = "213654454478";
+    var WA_CHAT = "https://wa.me/qr/D3BGXBCBJC2OJ1";
+    function waHref(text) {
+      return WA_CHAT + "?text=" + encodeURIComponent(text);
+    }
     var MSG_MENTOR = "السلام عليكم، أريد معرفة تفاصيل التدريب الشخصي (99 دولار شهرياً).";
-    document.getElementById("waMentor").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(MSG_MENTOR);
+    document.getElementById("waMentor").href = waHref(MSG_MENTOR);
     document.getElementById("applyForm").addEventListener("submit", function (e) {
       e.preventDefault();
       var name = document.getElementById("fullName").value.trim();
-      var why = document.getElementById("why").value.trim();
       var experience = document.getElementById("experience").value;
-      var signals = document.getElementById("signals").value;
       var commit = document.getElementById("commit").value;
-      var expect = document.getElementById("expect").value.trim();
-      var accept = document.getElementById("accept").checked;
+      var funded = document.getElementById("funded").value;
       var err = document.getElementById("formError");
-      if (!name || !why || !experience || !signals || !commit || !expect || !accept) {
+      if (!name || !experience || !commit || !funded) {
         err.classList.add("show");
         return;
       }
       err.classList.remove("show");
       var msg =
         "طلب دخول للمجتمع — تعلم التداول بطريقة صحيحة" +
-        "\n\nالاسم: " + name +
-        "\n\n1) لماذا يريد الدخول:\n" + why +
-        "\n\n2) الخبرة: " + experience +
-        "\n3) هل يبحث عن توصيات: " + signals +
-        "\n4) الالتزام بالعمل: " + commit +
-        "\n\n5) ماذا يتوقع أول شهر:\n" + expect +
-        "\n\nأؤكد أنني أفهم أن هذا تعليم وعمل، وليست إشارات.";
-      window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
+        "\n\nالاسم في ديسكورد: " + name +
+        "\n\n1) الخبرة في التداول: " + experience +
+        "\n2) يلتزم بالعمل والتطبيق لا بالمشاهدة: " + commit +
+        "\n3) جاهز مادياً بعد التعلّم لشراء حساب تمويل والعمل عليه: " + funded;
+      window.open(waHref(msg), "_blank", "noopener");
     });
   </script>
 </body>
