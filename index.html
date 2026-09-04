@@ -151,7 +151,7 @@
       border-radius: 20px;
       padding: 22px;
     }
-    .card h3 { color: var(--gold-2); margin-bottom: 8px; font-size: 1.15rem; }
+    .card p { color: var(--cream); }
     .idx { display: block; color: var(--gold-2); font-weight: 800; margin-bottom: 6px; }
     .section-dark { background: #0c1c34; }
     .level ul, .yes ul, .no ul { list-style: none; margin-top: 12px; color: var(--cream); }
@@ -274,6 +274,7 @@
         <a href="#await">ما ينتظرك</a>
         <a href="#levels">المنهج</a>
         <a href="#who">لمن هذا</a>
+        <a href="#conditions">شروط الدخول</a>
         <a href="#apply">أسئلة الدخول</a>
         <a href="#pay">الدخول</a>
         <a href="#mentor">التدريب الشخصي</a>
@@ -416,20 +417,41 @@
           <div class="card yes">
             <h3>هذا المكان لك إذا</h3>
             <ul>
+              <li>عندك حاسوب تعمل عليه داخل المجتمع</li>
+              <li>قادر بعد التعلّم أن تشتري حساباً ممولاً وتطبّق</li>
               <li>تريد بناء منظومة، لا نسخ صفقات غيرك</li>
               <li>تقبل القواعد والمساءلة الشهرية</li>
               <li>تبحث عن بيئة هادئة وجادّة</li>
-              <li>تفهم أن إدارة رأس المال جزء من التعلّم</li>
             </ul>
           </div>
           <div class="card no">
             <h3>لن يناسبك إذا</h3>
             <ul>
+              <li>ليس لديك حاسوب — وفّر للحاسوب أولاً فهو أولى</li>
               <li>تريد توصيات جاهزة أو نسخ تداول</li>
               <li>تبحث عن ربح سريع دون انضباط</li>
               <li>لا تتحمل بيئة فيها معيار وقواعد</li>
             </ul>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="conditions" class="section-dark">
+      <div class="wrap">
+        <h2>شرطان قبل أي دخول</h2>
+        <p class="sub">إذا نقص أحد الشرطين، لا تدخل الآن. وفّر ما ينقصك أولاً… ثم اطلب الدخول وأنت جاهز للعمل.</p>
+        <div class="grid-2">
+          <article class="card">
+            <span class="idx">الشرط 1</span>
+            <h3>حاسوب للعمل</h3>
+            <p>يكون عندك حاسوب. إذا ما عندكش حاسوب، وفّر أموالك وزد عليها لتشتري حاسوباً. هكذا يكون أفضل لك بكثير من الدخول بلا أداة العمل.</p>
+          </article>
+          <article class="card">
+            <span class="idx">الشرط 2</span>
+            <h3>حساب ممول بعد التعلّم</h3>
+            <p>تكون قادراً بعد التعلّم أن تشتري حساباً ممولاً، لتطبّق ما تعلّمته وتبدأ طريقك.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -489,7 +511,7 @@
     <section id="apply">
       <div class="wrap">
         <h2>أسئلة قبل الدخول</h2>
-        <p class="sub">كل من يطلب الدخول يجيب على هذه الأسئلة. ليست امتحاناً… هي لنعرف إن كان هذا المحيط يناسبك، وإن كنت ستعمل داخله لا تكتفي بالمشاهدة.</p>
+        <p class="sub">كل من يطلب الدخول يجيب على هذه الأسئلة. ليست امتحاناً… هي لنعرف إن كان هذا المحيط يناسبك، وإن كنت ستعمل داخله لا تكتفي بالمشاهدة. والشرطان ثابتان: حاسوب، ثم القدرة بعد التعلّم على شراء حساب ممول.</p>
         <form class="card apply-form" id="applyForm">
           <div class="field">
             <label for="fullName">الاسم</label>
@@ -513,7 +535,16 @@
             </select>
           </div>
           <div class="field">
-            <label for="funded">هل أنت جاهز مادياً بعد التعلّم لشراء حساب تمويل والعمل عليه؟</label>
+            <label for="computer">هل عندك حاسوب للعمل داخل المجتمع؟</label>
+            <span>إذا ما عندكش، وفّر أموالك وزد عليها لتشتري حاسوباً. هذا أولى وأفضل لك بكثير من الدخول الآن.</span>
+            <select id="computer" name="computer" required>
+              <option value="">اختر</option>
+              <option>نعم</option>
+              <option>لا</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="funded">هل أنت قادر بعد التعلّم أن تشتري حساباً ممولاً وتطبّق ما تعلّمته؟</label>
             <select id="funded" name="funded" required>
               <option value="">اختر</option>
               <option>نعم</option>
@@ -629,10 +660,11 @@
       var name = document.getElementById("fullName").value.trim();
       var experience = document.getElementById("experience").value;
       var commit = document.getElementById("commit").value;
+      var computer = document.getElementById("computer").value;
       var funded = document.getElementById("funded").value;
       var offer = document.getElementById("offer").value;
       var err = document.getElementById("formError");
-      if (!name || !experience || !commit || !funded || !offer) {
+      if (!name || !experience || !commit || !computer || !funded || !offer) {
         err.classList.add("show");
         return;
       }
@@ -642,8 +674,9 @@
         "\n\nالاسم في ديسكورد: " + name +
         "\n\n1) الخبرة في التداول: " + experience +
         "\n2) يلتزم بالعمل والتطبيق لا بالمشاهدة: " + commit +
-        "\n3) جاهز مادياً بعد التعلّم لشراء حساب تمويل والعمل عليه: " + funded +
-        "\n4) العرض المختار: " + offer;
+        "\n3) عنده حاسوب للعمل: " + computer +
+        "\n4) قادر بعد التعلّم أن يشتري حساباً ممولاً ويطبّق: " + funded +
+        "\n5) العرض المختار: " + offer;
       window.location.href = waHref(msg);
     });
   </script>
