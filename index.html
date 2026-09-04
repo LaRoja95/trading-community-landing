@@ -220,6 +220,30 @@
       .gains-cta .btn { width: 100%; }
     }
     .split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .apply-form { display: grid; gap: 16px; }
+    .field { display: grid; gap: 6px; }
+    .field label { color: var(--gold-2); font-weight: 800; }
+    .field span { color: var(--muted); font-size: 0.9rem; font-weight: 400; }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      background: #0c1c34;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 12px 14px;
+    }
+    .field textarea { min-height: 96px; resize: vertical; }
+    .check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--cream);
+    }
+    .check input { margin-top: 6px; width: 18px; height: 18px; accent-color: var(--gold); }
+    .form-error { color: #f0b4b4; display: none; }
+    .form-error.show { display: block; }
   </style>
 </head>
 <body>
@@ -233,10 +257,11 @@
         <a href="#await">ما ينتظرك</a>
         <a href="#levels">المنهج</a>
         <a href="#who">لمن هذا</a>
+        <a href="#apply">أسئلة الدخول</a>
         <a href="#pay">الدخول</a>
         <a href="#mentor">التدريب الشخصي</a>
       </nav>
-      <a class="btn" href="#pay">اطلب الدخول</a>
+      <a class="btn" href="#apply">اطلب الدخول</a>
     </div>
   </header>
 
@@ -255,7 +280,7 @@
             المعلومة وحدها بلا تطبيق لن تنفعك بشيء.
           </p>
           <div class="hero-actions">
-            <a class="btn" href="#pay">لا تبقَ خارج المحيط</a>
+            <a class="btn" href="#apply">لا تبقَ خارج المحيط</a>
             <a class="btn btn-ghost" href="#await">ماذا سيتلقى العضو؟</a>
           </div>
           <div class="hero-meta">
@@ -274,7 +299,7 @@
             <li>مسار بثلاث مستويات حتى حساب التمويل</li>
             <li>بيئة مختارة… من يخرج منها يخسر الحضور والمساءلة</li>
           </ul>
-          <a class="btn" href="#pay" style="width:100%">كيف تدخل؟</a>
+          <a class="btn" href="#apply" style="width:100%">كيف تدخل؟</a>
         </aside>
       </div>
     </section>
@@ -319,7 +344,7 @@
           <p>خمسة وعشرون دولاراً ليست الهدف. الهدف ألّا تبقى وحدك بمعلومة بلا تطبيق، وبلا محيط يصحّح مسارك.
             <span>من يدخل يجد بيئة وحضوراً ومساراً يوصل إلى النجاح. من يبقى خارجه يخسر ذلك.</span>
           </p>
-          <a class="btn" href="#pay">اطلب دخول المحيط</a>
+          <a class="btn" href="#apply">اطلب دخول المحيط</a>
         </div>
       </div>
     </section>
@@ -395,10 +420,10 @@
     <section>
       <div class="wrap">
         <h2>كيف تدخل؟</h2>
-        <p class="sub">الدفع يدوي في هذه المرحلة. الرول يُجدَّد ثلاثين يوماً بعد كل تحويل. لا تجديد تلقائي من البنك.</p>
+        <p class="sub">الدخول لا يُفتح بالتحويل وحده. تجيب أولاً على أسئلة قصيرة نراجعها، ثم التحويل، ثم الدعوة.</p>
         <div class="steps">
-          <div class="card step"><div class="num">1</div><strong>اختر طريقة الدفع</strong><p>Binance USDT أو CCP / Baridimob</p></div>
-          <div class="card step"><div class="num">2</div><strong>حوّل مقابل الدخول</strong><p>25 دولاراً أو ما يعادلها</p></div>
+          <div class="card step"><div class="num">1</div><strong>أجب عن الأسئلة</strong><p>طلب الدخول يبدأ من الاستمارة أسفل الصفحة</p></div>
+          <div class="card step"><div class="num">2</div><strong>حوّل مقابل الدخول</strong><p>25 دولاراً أو ما يعادلها بعد الموافقة</p></div>
           <div class="card step"><div class="num">3</div><strong>أرسل إثبات التحويل</strong><p>الاسم + السكرين عبر واتساب</p></div>
           <div class="card step"><div class="num">4</div><strong>تستلم الدعوة</strong><p>ديسكورد + رول 30 يوماً</p></div>
         </div>
@@ -426,11 +451,67 @@
         </div>
         <aside class="price-card">
           <h3 style="color:var(--gold-2);margin-bottom:8px">طلب الدخول</h3>
-          <p>بعد التحويل: الاسم الكامل + صورة الإثبات + طريقة الدفع. نراجع الطلب ثم نفتح لك باب المحيط.</p>
-          <a class="btn" id="waBtn" href="#" target="_blank" rel="noopener" style="width:100%;margin-top:16px">واتساب الدخول</a>
-          <button class="btn pay-btn" id="copyNote" type="button">نسخ رسالة الدخول</button>
-          <p class="note" id="waHint">يفتح واتساب برسالة جاهزة لطلب الدخول إلى المجتمع.</p>
+          <p>الدخول يبدأ بالإجابة على الأسئلة. بعد مراجعتها نرسل تفاصيل التحويل، ثم الدعوة.</p>
+          <a class="btn" href="#apply" style="width:100%;margin-top:16px">أجب عن أسئلة الدخول</a>
+          <p class="note">لا يُفتح الواتساب للدخول إلا بعد إكمال الاستمارة.</p>
         </aside>
+      </div>
+    </section>
+
+    <section id="apply">
+      <div class="wrap">
+        <h2>أسئلة قبل الدخول</h2>
+        <p class="sub">كل من يطلب الدخول يجيب على هذه الأسئلة. ليست امتحاناً… هي لنعرف إن كان هذا المحيط يناسبك، وإن كنت ستعمل داخله لا تكتفي بالمشاهدة.</p>
+        <form class="card apply-form" id="applyForm">
+          <div class="field">
+            <label for="fullName">الاسم الكامل</label>
+            <input id="fullName" name="fullName" required maxlength="80" autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="why">لماذا تريد الدخول إلى هذا المجتمع؟</label>
+            <span>اكتب بوضوح. إجابات «أبغى أربح» وحدها لا تكفي.</span>
+            <textarea id="why" name="why" required maxlength="400" placeholder="ما الذي تبحث عنه هنا؟"></textarea>
+          </div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="experience">ما خبرتك في التداول؟</label>
+              <select id="experience" name="experience" required>
+                <option value="">اختر</option>
+                <option>لم أبدأ بعد</option>
+                <option>أقل من سنة</option>
+                <option>من سنة إلى ثلاث سنوات</option>
+                <option>أكثر من ثلاث سنوات</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="signals">هل تبحث عن توصيات صفقات أو نسخ تداول؟</label>
+              <select id="signals" name="signals" required>
+                <option value="">اختر</option>
+                <option>لا. أريد أن أتعلّم وأبني منظومة</option>
+                <option>نعم. أريد توصيات جاهزة</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="commit">هل تلتزم بالعمل والتطبيق داخل المجتمع؟</label>
+            <select id="commit" name="commit" required>
+              <option value="">اختر</option>
+              <option>نعم. سأعمل وأسأل وأطبّق، لا أكتفي بالمشاهدة</option>
+              <option>أفضل المتابعة بالمشاهدة فقط</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="expect">ماذا تتوقع أن تتلقى خلال أول شهر؟</label>
+            <textarea id="expect" name="expect" required maxlength="400" placeholder="تعليم، لايفات، مساءلة… اكتب توقعك بصدق."></textarea>
+          </div>
+          <label class="check">
+            <input type="checkbox" id="accept" name="accept" required />
+            <span>أفهم أن هذا مجتمع تعليم وعمل، وليس جروب إشارات، وأن المعلومة بلا تطبيق لن تنفعني.</span>
+          </label>
+          <p class="form-error" id="formError">أجب على كل الأسئلة قبل إرسال طلب الدخول.</p>
+          <button class="btn" type="submit">أرسل طلب الدخول عبر واتساب</button>
+          <p class="note">بعد الإرسال نراجع إجاباتك. إن ناسبك المحيط، نرسل تفاصيل التحويل ثم الدعوة.</p>
+        </form>
       </div>
     </section>
 
@@ -514,15 +595,33 @@
 
   <script>
     var WHATSAPP = "213654454478";
-    var MSG = "السلام عليكم، أريد الدخول إلى مجتمع تعلم التداول بطريقة صحيحة.";
     var MSG_MENTOR = "السلام عليكم، أريد معرفة تفاصيل التدريب الشخصي (99 دولار شهرياً).";
-    var wa = document.getElementById("waBtn");
-    wa.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(MSG);
     document.getElementById("waMentor").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(MSG_MENTOR);
-    document.getElementById("copyNote").addEventListener("click", function () {
-      navigator.clipboard.writeText(MSG).then(function () {
-        document.getElementById("copyNote").textContent = "تم النسخ";
-      });
+    document.getElementById("applyForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = document.getElementById("fullName").value.trim();
+      var why = document.getElementById("why").value.trim();
+      var experience = document.getElementById("experience").value;
+      var signals = document.getElementById("signals").value;
+      var commit = document.getElementById("commit").value;
+      var expect = document.getElementById("expect").value.trim();
+      var accept = document.getElementById("accept").checked;
+      var err = document.getElementById("formError");
+      if (!name || !why || !experience || !signals || !commit || !expect || !accept) {
+        err.classList.add("show");
+        return;
+      }
+      err.classList.remove("show");
+      var msg =
+        "طلب دخول للمجتمع — تعلم التداول بطريقة صحيحة" +
+        "\n\nالاسم: " + name +
+        "\n\n1) لماذا يريد الدخول:\n" + why +
+        "\n\n2) الخبرة: " + experience +
+        "\n3) هل يبحث عن توصيات: " + signals +
+        "\n4) الالتزام بالعمل: " + commit +
+        "\n\n5) ماذا يتوقع أول شهر:\n" + expect +
+        "\n\nأؤكد أنني أفهم أن هذا تعليم وعمل، وليست إشارات.";
+      window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
     });
   </script>
 </body>
