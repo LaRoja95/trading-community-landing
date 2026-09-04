@@ -546,7 +546,7 @@
             <li>متابعة أقرب… ووقت إضافي للتعلّم</li>
             <li>واتساب شخصي متى احتجت سؤالاً</li>
           </ul>
-          <a class="btn" id="waMentor" href="#" target="_blank" rel="noopener" style="width:100%">واتساب التدريب الشخصي</a>
+          <a class="btn" id="waMentor" href="#" style="width:100%">واتساب التدريب الشخصي</a>
           <p class="note">المجتمع يبقى الأساس. هذا إضافة لمن يريد وقتاً أقرب وخبرة منقولة بشكل مباشر.</p>
         </aside>
       </div>
@@ -591,9 +591,9 @@
   </footer>
 
   <script>
-    var WA_CHAT = "https://wa.me/qr/D3BGXBCBJC2OJ1";
+    var WA_PHONE = "213654454478";
     function waHref(text) {
-      return WA_CHAT + "?text=" + encodeURIComponent(text);
+      return "https://wa.me/" + WA_PHONE + "?text=" + encodeURIComponent(text);
     }
     var MSG_MENTOR = "السلام عليكم، أريد معرفة تفاصيل التدريب الشخصي (99 دولار شهرياً).";
     document.getElementById("waMentor").href = waHref(MSG_MENTOR);
@@ -615,7 +615,7 @@
         "\n\n1) الخبرة في التداول: " + experience +
         "\n2) يلتزم بالعمل والتطبيق لا بالمشاهدة: " + commit +
         "\n3) جاهز مادياً بعد التعلّم لشراء حساب تمويل والعمل عليه: " + funded;
-      window.open(waHref(msg), "_blank", "noopener");
+      window.location.href = waHref(msg);
     });
   </script>
 </body>
