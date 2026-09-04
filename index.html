@@ -126,7 +126,15 @@
     }
     .price-card .tag { color: var(--gold-2); font-weight: 800; }
     .price { font-size: 3rem; font-weight: 900; color: var(--gold-2); line-height: 1; margin: 8px 0; }
-    .price small { font-size: 1.05rem; color: var(--muted); font-weight: 700; }
+    .offer-price {
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: var(--gold-2);
+      line-height: 1.2;
+      margin: 8px 0 10px;
+    }
+    .offer-price small { font-size: 0.95rem; color: var(--muted); font-weight: 700; }
+    .offer-old { text-decoration: line-through; color: var(--muted); font-weight: 700; margin-inline-start: 6px; }
     .price-card > p { color: var(--muted); }
     .price-card ul { list-style: none; margin: 16px 0 22px; color: var(--cream); }
     .price-card li { padding: 7px 0; }
@@ -303,10 +311,10 @@
           <div class="price">25$ <small>/ الشهر</small></div>
           <p>دخول إلى بيئة إيجابية بمعيار — ليست دورة تُشاهد ولا إشارات جاهزة. أو ما يعادله عبر CCP / Baridimob.</p>
           <ul>
-            <li>لايف يومي على جلسة لندن أو نيويورك</li>
-            <li>لايف أسئلة + ميتنغ شخصي كل شهر</li>
-            <li>مسار بثلاث مستويات حتى حساب التمويل</li>
-            <li>بيئة مختارة… من يخرج منها يخسر الحضور والمساءلة</li>
+            <li>شهري: 25$</li>
+            <li>3 أشهر مسبقاً: 60$ بدل 75$</li>
+            <li>سنة: شهرين مجاناً — 14 شهراً بـ 300$</li>
+            <li>لايف يومي + ميتنغ شخصي كل شهر</li>
           </ul>
           <a class="btn" href="#apply" style="width:100%">كيف تدخل؟</a>
         </aside>
@@ -432,31 +440,47 @@
         <p class="sub">الدخول لا يُفتح بالتحويل وحده. تجيب أولاً على أسئلة قصيرة نراجعها، ثم التحويل، ثم الدعوة.</p>
         <div class="steps">
           <div class="card step"><div class="num">1</div><strong>أجب عن الأسئلة</strong><p>طلب الدخول يبدأ من الاستمارة أسفل الصفحة</p></div>
-          <div class="card step"><div class="num">2</div><strong>حوّل مقابل الدخول</strong><p>25 دولاراً أو ما يعادلها بعد الموافقة</p></div>
+          <div class="card step"><div class="num">2</div><strong>حوّل مقابل الدخول</strong><p>حسب العرض: شهري، 3 أشهر، أو سنة — بعد الموافقة</p></div>
           <div class="card step"><div class="num">3</div><strong>أرسل إثبات التحويل</strong><p>الاسم + السكرين عبر واتساب</p></div>
-          <div class="card step"><div class="num">4</div><strong>تستلم الدعوة</strong><p>ديسكورد + رول 30 يوماً</p></div>
+          <div class="card step"><div class="num">4</div><strong>تستلم الدعوة</strong><p>ديسكورد حسب مدة العرض الذي اخترته</p></div>
         </div>
       </div>
     </section>
 
     <section id="pay" class="section-dark">
-      <div class="wrap pay">
+      <div class="wrap">
+        <h2>عروض الدخول</h2>
+        <p class="sub">تختار المدة قبل التحويل. لا خصم تلقائي — أنت تتحكم في كل تجديد.</p>
+        <div class="grid-3">
+          <article class="card">
+            <h3>شهري</h3>
+            <p class="offer-price">25$</p>
+            <p>كل شهر. إن توقف التحويل، يتوقف الحضور داخل المحيط حتى العودة.</p>
+          </article>
+          <article class="card">
+            <h3>3 أشهر مسبقاً</h3>
+            <p class="offer-price">60$ <small class="offer-old">75$</small></p>
+            <p>ثلاثة أشهر دفعة واحدة. توفّر 15 دولاراً مقابل الدفع المسبق.</p>
+          </article>
+          <article class="card">
+            <h3>سنة</h3>
+            <p class="offer-price">300$ <small>14 شهراً</small></p>
+            <p>ادفع سنة واحصل على شهرين مجاناً. أربعة عشر شهراً داخل المحيط.</p>
+          </article>
+        </div>
+      </div>
+      <div class="wrap pay" style="margin-top:28px">
         <div>
-          <h2>طرق الدخول</h2>
-          <p class="sub">الدخول يتجدد كل ثلاثين يوماً بعد التحويل. إن توقف الدخول، يتوقف الحضور داخل المحيط حتى العودة.</p>
           <div class="grid-2">
             <article class="card">
               <h3>USDT / Binance</h3>
-              <p>25 دولاراً شهرياً. عنوان المحفظة يُرسل لك بعد تأكيد رغبتك في الدخول — لا يُعرض هنا.</p>
+              <p>المبلغ حسب العرض الذي تختاره. عنوان المحفظة يُرسل لك بعد تأكيد الدخول — لا يُعرض هنا.</p>
             </article>
             <article class="card">
               <h3>CCP / Baridimob</h3>
-              <p>للمقيمين في الجزائر. رقم الحساب والمبلغ بالدينار يُرسلان بعد رسالة واتساب.</p>
+              <p>للمقيمين في الجزائر. رقم الحساب والمبلغ بالدينار يُرسلان بعد رسالة واتساب، حسب العرض.</p>
             </article>
           </div>
-          <p class="note">
-            العرض السنوي اختياري: ادفع سنة واحصل على شهرين إضافيين. أنت تتحكم في كل تجديد — لا خصم تلقائي.
-          </p>
         </div>
         <aside class="price-card">
           <h3 style="color:var(--gold-2);margin-bottom:8px">طلب الدخول</h3>
@@ -499,6 +523,15 @@
               <option value="">اختر</option>
               <option>نعم</option>
               <option>لا</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="offer">أي عرض تختار للدخول؟</label>
+            <select id="offer" name="offer" required>
+              <option value="">اختر</option>
+              <option>شهري — 25$</option>
+              <option>3 أشهر مسبقاً — 60$ بدل 75$</option>
+              <option>سنة — 300$ مع شهرين مجاناً (14 شهراً)</option>
             </select>
           </div>
           <p class="form-error" id="formError">أجب على كل الأسئلة قبل إرسال طلب الدخول.</p>
@@ -603,8 +636,9 @@
       var experience = document.getElementById("experience").value;
       var commit = document.getElementById("commit").value;
       var funded = document.getElementById("funded").value;
+      var offer = document.getElementById("offer").value;
       var err = document.getElementById("formError");
-      if (!name || !experience || !commit || !funded) {
+      if (!name || !experience || !commit || !funded || !offer) {
         err.classList.add("show");
         return;
       }
@@ -614,7 +648,8 @@
         "\n\nالاسم في ديسكورد: " + name +
         "\n\n1) الخبرة في التداول: " + experience +
         "\n2) يلتزم بالعمل والتطبيق لا بالمشاهدة: " + commit +
-        "\n3) جاهز مادياً بعد التعلّم لشراء حساب تمويل والعمل عليه: " + funded;
+        "\n3) جاهز مادياً بعد التعلّم لشراء حساب تمويل والعمل عليه: " + funded +
+        "\n4) العرض المختار: " + offer;
       window.location.href = waHref(msg);
     });
   </script>
