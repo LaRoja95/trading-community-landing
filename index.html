@@ -687,6 +687,12 @@
         content_name: "whatsapp_" + label,
         content_category: "مجتمع التداول"
       });
+      fbq("track", "Lead", {
+        content_name: "whatsapp_" + label,
+        content_category: "مجتمع التداول",
+        value: 49,
+        currency: "USD"
+      });
       fbq("trackCustom", "WhatsAppClick", {
         button: label,
         value: 49,
