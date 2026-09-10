@@ -15,6 +15,24 @@
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Meta Pixel: مجتمع التداول — ضغط واتساب = Contact / WhatsAppClick -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '4542885555994168');
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent', {
+    content_name: 'مجتمع التداول',
+    content_category: 'trading_community',
+    value: 49,
+    currency: 'USD'
+  });
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt=""
+    src="https://www.facebook.com/tr?id=4542885555994168&ev=PageView&noscript=1" /></noscript>
   <style>
     :root {
       --navy: #0a1628;
@@ -663,8 +681,33 @@
     function waHref(text) {
       return "https://wa.me/" + WA_PHONE + "?text=" + encodeURIComponent(text);
     }
+    function trackWhatsApp(label) {
+      if (typeof fbq !== "function") return;
+      fbq("track", "Contact", {
+        content_name: "whatsapp_" + label,
+        content_category: "مجتمع التداول"
+      });
+      fbq("trackCustom", "WhatsAppClick", {
+        button: label,
+        value: 49,
+        currency: "USD"
+      });
+    }
+    function goWhatsApp(url, label) {
+      trackWhatsApp(label);
+      setTimeout(function () {
+        window.location.href = url;
+      }, 350);
+    }
+
     var MSG_MENTOR = "السلام عليكم، أريد معرفة تفاصيل التدريب الشخصي (99 دولار شهرياً).";
-    document.getElementById("waMentor").href = waHref(MSG_MENTOR);
+    var mentorBtn = document.getElementById("waMentor");
+    mentorBtn.href = waHref(MSG_MENTOR);
+    mentorBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      goWhatsApp(waHref(MSG_MENTOR), "mentor");
+    });
+
     document.getElementById("applyForm").addEventListener("submit", function (e) {
       e.preventDefault();
       var name = document.getElementById("fullName").value.trim();
@@ -687,7 +730,7 @@
         "\n3) عنده حاسوب للعمل: " + computer +
         "\n4) قادر بعد التعلّم أن يشتري حساباً ممولاً لنتابعه مع شركات التمويل: " + funded +
         "\n5) العرض المختار: " + offer;
-      window.location.href = waHref(msg);
+      goWhatsApp(waHref(msg), "apply_form");
     });
   </script>
 </body>
